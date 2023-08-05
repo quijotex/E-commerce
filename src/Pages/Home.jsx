@@ -42,7 +42,6 @@ const Home = () => {
                                     {category.name}
                                 </ListGroup.Item>
                             ))
-                    
                         }
                     </ListGroup>
                     </Col>

@@ -33,8 +33,7 @@ export const filterProductsByCategoryThunk = id => dispatch => {
   .get(`https://e-commerce-api-v2.academlo.tech/api/v1/products?categoryId=${id}`)
   .then(resp => dispatch(setProducts(resp.data)))
   .catch(error => console.error(error))
-  .f
-  inally(() => dispatch(setIsLoading(false)))
+  .finally(() => dispatch(setIsLoading(false)))
 }
 
 export const filterProductsByNameThunk = id => dispatch => {
