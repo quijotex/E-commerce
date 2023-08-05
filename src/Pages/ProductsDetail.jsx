@@ -21,8 +21,8 @@ const ProductsDetail = () => {
      const getDetail = () => {
         axios
         .get( `https://e-commerce-api-v2.academlo.tech/api/v1/products/${id}`)
-        .then(resp => {console.log(resp.data); setProductDetail(resp?.data);
-         dispatch(filterProductsByCategoryThunk(resp.data.category.id))})
+        .then(resp => { setProductDetail(resp?.data);
+         dispatch(filterProductsByCategoryThunk(resp?.data?.category?.id))})
         .catch(error => console.error(error))
      }
     return(
@@ -42,27 +42,34 @@ const ProductsDetail = () => {
                 <p className="text-mutd">{productDetail.description}</p>
                 </Col>
                 </Row>
-                <Row>
+                <Row  >
                 
-                <h2>Discover similar items</h2>
+             <strong className="related-title"> Discover similar items</strong>
                
                     {
                         allproducts.map(product => (
-                            <Col>
-                                 <Card className="card-detail" key={product.id} style={{ width: '18rem' }}>
-                                        <Card.Img className="card-detail__img" variant="top" src={product?.images[0]?.url} />
-                                        <Card.Body>
-                                            <Card.Title>  {product?.brand}</Card.Title>
+                            <Col lg={4} className="card-product" key={product?.id}>
+                                 <Card className="card-product__detail" >
+                             <div className="card-product__images">
+                                 <Card.Img className="card-detail__img1" variant="top" src={product?.images[0]?.url} />
+                                 <Card.Img className="card-detail__img2" variant="top" src={product?.images[1]?.url} />
+                              </div>
+                                        <Card.Body className="card-product__body">
+                                            <Card.Title> <span className="card-body__gray card-body__gray--brand">{product?.brand}</span> </Card.Title>
                                             <Card.Text>
-                                            {product?.title}
+                                           <span className="card-body__bold">{product?.title}</span> 
+                                            </Card.Text>
+                                        <div className="card-product__button">
+                                            <div className="card-product__price">
+                                            <Card.Text>
+                                            <span className="card-body__gray">Price</span>
                                             </Card.Text>
                                             <Card.Text>
-                                            Price
+                                           <span className="card-body__bold">{product?.price}</span> 
                                             </Card.Text>
-                                            <Card.Text>
-                                            {product?.price}
-                                            </Card.Text>
-                                            <Button variant="primary">Go somewhere</Button>
+                                            </div>
+                                            <Button variant="primary"><i className='bx bx-cart'></i></Button>
+                                        </div> 
                                         </Card.Body>
                                  </Card>
                                  </Col>
