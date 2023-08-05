@@ -1,34 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Home from './Pages/Home'
+import Login from './Pages/Login';
+import Favorites from './Pages/Favorities';
+import ProductsDetail from './Pages/ProductsDetail';
+import AppNav from '../AppNav';
+import Container from "react-bootstrap/Container";
+import Loader from '../Components/Loader'
+import { HashRouter, Routes, Route } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { setIsLoading } from './store/slices/isLoading'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const isLoading = useSelector(state => state.isLoading)
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <HashRouter>
+      <AppNav />
+      <Container>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/products/:id" element={<ProductsDetail />} />
+        </Routes>
+      </Container>
+
+      {isLoading && <Loader />}
+    </HashRouter>
   )
 }
 
