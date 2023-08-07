@@ -8,7 +8,7 @@ import Container from "react-bootstrap/Container";
 import Loader from '../Components/Loader'
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { setIsLoading } from './store/slices/isLoading'
+
 
 function App() {
 

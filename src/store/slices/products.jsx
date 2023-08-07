@@ -36,10 +36,10 @@ export const filterProductsByCategoryThunk = id => dispatch => {
   .finally(() => dispatch(setIsLoading(false)))
 }
 
-export const filterProductsByNameThunk = id => dispatch => {
+export const filterProductsByNameThunk = name => dispatch => {
   dispatch(setIsLoading(true))
   axios
-  .get(`https://e-commerce-api-v2.academlo.tech/api/v1/products?title=${id}`)
+  .get(`https://e-commerce-api-v2.academlo.tech/api/v1/products?title=${name}`)
   .then(resp => dispatch(setProducts(resp.data)))
   .catch(error => console.error(error))
   .finally(() => dispatch(setIsLoading(false)))

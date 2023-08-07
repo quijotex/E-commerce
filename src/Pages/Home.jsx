@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
-import { getProductsThunk, filterProductsByCategoryThunk  } from '../store/slices/products';
+import { getProductsThunk, filterProductsByCategoryThunk, filterProductsByNameThunk  } from '../store/slices/products';
 import axios from 'axios';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Card from 'react-bootstrap/Card';
@@ -17,6 +17,7 @@ const Home = () => {
     const [ categories, setCategories ] = useState([])
     const [ searchValue, setSearchValue ] = useState("")
     
+
     useEffect(() =>{
         dispatch( getProductsThunk())
         getCategories()
@@ -55,9 +56,8 @@ const Home = () => {
                             id='IdSearch'
                             value={searchValue}
                             onChange={e => setSearchValue(e.target.value)}
-                            
                             />
-                           <Button className='searcher-button'><i className='bx bx-search'></i></Button>
+                           <Button  onClick={() => dispatch(filterProductsByNameThunk(searchValue) )} className='searcher-button'><i className='bx bx-search'></i></Button>
                         </InputGroup>
                         </Col>
                     </Row>
