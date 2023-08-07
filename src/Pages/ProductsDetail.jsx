@@ -53,7 +53,7 @@ const ProductsDetail = () => {
                 </nav>
                  <Row className="first-row">
                     <Col >
-                    <div>
+                   
                         <Carousel className="carousel " interval={null} indicators={false} activeIndex={index} onSelect={handleSelect}>
                                 {productDetail?.images?.map(img => (
                                      <Carousel.Item  key={img?.id}>
@@ -74,7 +74,7 @@ const ProductsDetail = () => {
                                 ))
                                 }
                         </div>
-                    </div>
+                    
                     </Col>
                     <Col>
                         <p className="cart-product--brand">{productDetail?.brand}</p>

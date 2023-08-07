@@ -1,7 +1,7 @@
 import './App.css'
 import Home from './Pages/Home'
 import Login from './Pages/Login';
-import Favorites from './Pages/Purchases';
+import Purchases from './Pages/Purchases';
 import ProductsDetail from './Pages/ProductsDetail';
 import AppNav from '../Components/AppNav';
 import Container from "react-bootstrap/Container";
@@ -21,7 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/purchases" element={<Purchases />} />
           <Route path="/products/:id" element={<ProductsDetail />} />
         </Routes>
       </Container>

@@ -10,7 +10,7 @@ function AppNav() {
         <Navbar.Brand className="navigation__title" href="/#/">e-commerce</Navbar.Brand>
           <Nav className="navigation-nav">
             <Nav.Link className='navigation-nav__link' href="#home"><i className='bx bx-user bx-sm'></i></Nav.Link>
-            <Nav.Link className='navigation-nav__link' href="#link"><i className='bx bx-store bx-sm' ></i></Nav.Link>
+            <Nav.Link className='navigation-nav__link' href="#purchases"><i className='bx bx-store bx-sm' ></i></Nav.Link>
             <Nav.Link  className='navigation-nav__link' href="#link"><i className='bx bx-cart bx-sm' ></i></Nav.Link>
           </Nav>
        
