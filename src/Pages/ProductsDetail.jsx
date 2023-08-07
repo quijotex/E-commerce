@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import Button from 'react-bootstrap/Button';
 import { filterProductsByCategoryThunk } from "../store/slices/products";
+import { addPurchaseThunk, setPurchases } from "../store/slices/purchases";
 import { useSelector, useDispatch } from "react-redux";
 import { Col, Row, Container }from "react-bootstrap";
 import Card from 'react-bootstrap/Card';
@@ -39,6 +40,13 @@ const ProductsDetail = () => {
         setIndex(selectedIndex)
      }
 
+     const addProduct = () => {
+        const data = {
+            quantity: quantity,
+            productId: productDetail?.id
+        }
+        dispatch( addPurchaseThunk( data))
+     }
     
     return(
         <main>
@@ -94,7 +102,7 @@ const ProductsDetail = () => {
                                 </div>
                             </div>
                         </div>
-                        <Button className="cart-product__buy"><span>Add to cart</span><i className='bx bx-cart bx-sm'></i></Button>
+                        <Button onClick={addProduct}className="cart-product__buy"><span>Add to cart</span><i className='bx bx-cart bx-sm'></i></Button>
                     </Col>
                 </Row>
                  <Row>
