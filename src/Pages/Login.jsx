@@ -23,29 +23,28 @@ const Login = () => {
             })
         }
     return(
-        <main>
-           <Form onSubmit={handleSubmit(submit)}>
-            <h1>Login</h1>
+        <main className='form-login'>
+           <Form className="form-login__data" onSubmit={handleSubmit(submit)}>
+            <strong>Welcome! Enter your email and password to continue</strong>
+            <p className='login-message'>You have to Log In to access to your cart</p>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" 
-                    placeholder="Enter email"
+                    <Form.Label className='input-label'>Email</Form.Label>
+                    <Form.Control className="input-login" type="email" 
                     { ...register("email")} />
                     <Form.Text className="text-muted">
                   
                     </Form.Text>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="password"
-                     placeholder="Password"
+                    <Form.Label className='input-label'>Password</Form.Label>
+                    <Form.Control  className="input-login" type="password"
                      {...register("password")} />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
+                    
                 </Form.Group>
-                <Button variant="primary" type="submit">
-                    Submit
+                <Button className="button-login" variant="primary" type="submit">
+                    Login
                 </Button>
              </Form>
         </main>
