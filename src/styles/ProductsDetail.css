@@ -154,6 +154,7 @@
     height: 70px;
     object-fit: contain;
     padding: 5px;
+    cursor: pointer;;
 }
 .show-mini:hover {
     border: 2px solid var(--primary);

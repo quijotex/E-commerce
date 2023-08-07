@@ -1,9 +1,9 @@
 import './App.css'
 import Home from './Pages/Home'
 import Login from './Pages/Login';
-import Favorites from './Pages/Favorities';
+import Favorites from './Pages/Purchases';
 import ProductsDetail from './Pages/ProductsDetail';
-import AppNav from '../AppNav';
+import AppNav from '../Components/AppNav';
 import Container from "react-bootstrap/Container";
 import Loader from '../Components/Loader'
 import { HashRouter, Routes, Route } from 'react-router-dom'

@@ -1,0 +1,30 @@
+.navigation {
+    border-bottom: 1px solid var(--light-gray);
+}
+.navigation__title {
+    color: var(--primary);
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: lowercase;
+    padding: 10px 10px;
+}
+.navigation__container {
+   margin-left: 0;
+   padding-right: 0;
+   max-width: 1400px
+}
+.navbar {
+    --bs-navbar-padding-x: none; 
+}
+.navigation-nav {
+    text-align: center;
+}
+.navbar-nav .nav-link {
+    padding-top: 1.2rem;
+}
+.navigation-nav__link {
+    width: 210px;
+    height: 68px;
+    border-left: 1px solid var(--light-gray);
+    
+}

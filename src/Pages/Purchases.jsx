@@ -1,4 +1,4 @@
-const Favorites = () => {
+const Purchases = () => {
 
     return(
         <main>
@@ -7,4 +7,4 @@ const Favorites = () => {
     )
 }
 
-export default Favorites
+export default Purchases
