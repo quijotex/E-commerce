@@ -1,0 +1,29 @@
+.searcher {
+    margin: 40px 30px 40px 0px;
+    padding: 0px 60px 0px 60px;
+}
+.searcher input {
+    border: 1px solid var(--light-gray);
+    flex: 1 1;
+    font-size: .9rem;
+    padding: 5px 14px;
+}
+#IdSearch::placeholder {
+    color: rgba(128, 128, 128, 0.546);
+}
+.searcher-button {
+    background: var(--primary);
+    border: none;
+    color: #fff;
+    font-size: 1.1rem;
+    height: 45px;
+    line-height: 1;
+    width: 95px;
+}
+.li-products {
+    padding: 30px;
+}
+.form-control {
+    border: 0px;
+    background-color: white;
+}

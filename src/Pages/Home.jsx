@@ -9,12 +9,13 @@ import { useEffect, useState } from 'react';
 import { getProductsThunk, filterProductsByCategoryThunk  } from '../store/slices/products';
 import axios from 'axios';
 import ListGroup from 'react-bootstrap/ListGroup';
+import Card from 'react-bootstrap/Card';
 
 const Home = () => {
     const products = useSelector(state => state.products)
     const dispatch = useDispatch()
     const [ categories, setCategories ] = useState([])
-    const [ searchValue, setSearchValue ] =useState("")
+    const [ searchValue, setSearchValue ] = useState("")
     
     useEffect(() =>{
         dispatch( getProductsThunk())
@@ -45,40 +46,54 @@ const Home = () => {
                         }
                     </ListGroup>
                     </Col>
-                    <Col md={8} lg={9}>Lista de productos
+                    <Col md={8} lg={9}>
                     <Row>
                         <Col>
-                        <InputGroup className="mb-3">
+                        <InputGroup className="searcher">
                             <Form.Control
-                            placeholder="Recipient's username"
-                            aria-label="Recipient's username"
-                            aria-describedby="basic-addon2"
+                            placeholder="What are you looking for?"
+                            id='IdSearch'
                             value={searchValue}
                             onChange={e => setSearchValue(e.target.value)}
                             
                             />
-                           <Button>Buscar</Button>
+                           <Button className='searcher-button'><i className='bx bx-search'></i></Button>
                         </InputGroup>
                         </Col>
                     </Row>
-                        <Row xs={1} md={2} lg={3}>
+                        <Row  xs={1} md={2} lg={3}>
                             {
-                                products?.map(item => (
-                                    <Col key={item.id}>
-                                    <ProductsCard data={item}/>
+                                products?.map(product => (
+                                <Col className="li-products"  key={product.id}>
+                                     <Card className="card-product__detail" >
+                                <a className="card-product__anchor" href={`#/products/${product.id}`} > 
+                                    <div className="card-product__images">
+                                    <Card.Img className="card-detail__img1" variant="top" src={product?.images[0]?.url} />
+                                    <Card.Img className="card-detail__img2" variant="top" src={product?.images[1]?.url} />
+                                    </div>
+                                     <Card.Body className="card-product__body">
+                                         <Card.Title> <span className="card-body__gray card-body__gray--brand">{product?.brand}</span> </Card.Title>
+                                         <Card.Text>
+                                           <span className="card-body__bold">{product?.title}</span> 
+                                         </Card.Text>
+                                         <div className="card-product__price">
+                                            <Card.Text>
+                                                 <span className="card-body__gray">Price</span>
+                                            </Card.Text>
+                                            <Card.Text>
+                                                <span className="card-body__bold">{product?.price}</span> 
+                                            </Card.Text>
+                                         </div>
+                                     </Card.Body>
+                                 </a>
+                                 <div className="card-product__button" >
+                                    <Button variant="primary"><i className='bx bx-cart'></i></Button>
+                                 </div>
+                             </Card>
                                     </Col>
                                     )
                                 )
                             }
-                            <Col>
-                            <ProductsCard />
-                            </Col>
-                            <Col>
-                            <ProductsCard />
-                            </Col>
-                            <Col>
-                            <ProductsCard />
-                            </Col>
                         </Row>
                    </Col>
                 </Row>

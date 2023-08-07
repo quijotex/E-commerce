@@ -96,9 +96,6 @@ const ProductsDetail = () => {
                         </div>
                         <Button className="cart-product__buy"><span>Add to cart</span><i className='bx bx-cart bx-sm'></i></Button>
                     </Col>
-             
-                
-               
                 </Row>
                  <Row>
                     <strong className="related-title"> Discover similar items</strong>
