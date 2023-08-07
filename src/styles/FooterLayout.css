@@ -4,8 +4,43 @@
 }
 
 .footer {
-    background: #3c3c3b;
-    padding: 60px 0px;
-   
+    background:#3c3c3b;
+    padding: 60px 0px;   
+    text-align: center; 
     
 }
+.footer h1 {
+    text-transform: lowercase;
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+.footer h1::first-letter {
+    text-transform: uppercase;
+}
+.footer__developers h2  {
+    font-size: 1.2rem;
+    color: white;
+    text-transform: capitalize;
+}
+.footer__developers {
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+   
+}
+.footer__developers a {
+    background: #50504f;
+    border-radius: 50%;
+    display: inline-block;
+    font-size: 1.4rem;
+    height: 50px;
+    line-height: 2.45;
+    margin: 0 10px;
+    text-decoration: none;
+    width: 50px;
+}
+.footer__developers a i {
+    color: white;
+}
+ 
