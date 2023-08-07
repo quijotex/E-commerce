@@ -1,3 +1,9 @@
+.row {
+    --bs-gutter-x: 0.1rem;
+}
+.row>* {
+    padding-right: calc(var(--bs-gutter-x) * .3);
+}
 .searcher {
     margin: 40px 30px 40px 0px;
     padding: 0px 60px 0px 60px;

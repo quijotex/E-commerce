@@ -1,3 +1,6 @@
+nav {
+   width: 100%;
+}
 .navigation {
     border-bottom: 1px solid var(--light-gray);
 }
@@ -11,7 +14,11 @@
 .navigation__container {
    margin-left: 0;
    padding-right: 0;
-   max-width: 1450px
+   
+}
+.container {
+    margin-left: 0;
+    margin-right: 0;
 }
 .navbar {
     --bs-navbar-padding-x: none; 

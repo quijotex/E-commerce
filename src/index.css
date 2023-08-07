@@ -1,7 +1,7 @@
 @import url(/src/styles/ProductsDetail.css);
 @import url(/src/styles/AppNav.css);
 @import url(/src/styles/Home.css);
-
+@import url(/src/styles/FooterLayout.css);
 * {
   margin: 0;
   padding: 0;
@@ -14,4 +14,24 @@
   --gray: #c7c7c7;
   --dark-gray: #4f4f4f;
   --text-gray: #ababab;
+}
+
+@media (min-width: 992px) {
+
+.container, .container-lg, .container-md, .container-sm {
+    max-width: 100%;
+}
+}
+@media (min-width: 768px){
+
+.container, .container-md, .container-sm {
+    max-width: 100%;
+    padding: 0px;
+}
+}
+@media (min-width: 576px) {
+
+.container, .container-sm {
+    max-width: 100%;
+}
 }

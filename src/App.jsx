@@ -9,6 +9,7 @@ import Loader from '../Components/Loader'
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import ProtectedRoutes from '../Components/ProtectedRoutes';
+import FooterLayout from '../Components/FooterLayout';
 
 function App() {
 
@@ -19,12 +20,14 @@ function App() {
       <AppNav />
       <Container>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/products/:id" element={<ProductsDetail />} />
-       <Route element={ <ProtectedRoutes/> }>
-       <Route path="/purchases" element={<Purchases />} />
-       </Route>
+            <Route element={<FooterLayout/>}>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/products/:id" element={<ProductsDetail />} />
+              <Route element={ <ProtectedRoutes/> }> 
+                <Route path="/purchases" element={<Purchases />} />
+              </Route>
+          </Route>
         </Routes>
       </Container>
 
