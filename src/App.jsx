@@ -8,7 +8,7 @@ import Container from "react-bootstrap/Container";
 import Loader from '../Components/Loader'
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-
+import ProtectedRoutes from '../Components/ProtectedRoutes';
 
 function App() {
 
@@ -21,8 +21,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/purchases" element={<Purchases />} />
           <Route path="/products/:id" element={<ProductsDetail />} />
+       <Route element={ <ProtectedRoutes/> }>
+       <Route path="/purchases" element={<Purchases />} />
+       </Route>
         </Routes>
       </Container>
 
