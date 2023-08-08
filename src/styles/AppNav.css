@@ -53,7 +53,7 @@ nav {
     background: white;
     color: rgba(0, 0, 0, 0.3);
     --bs-navbar-active-color: #1a1a1a;
-    --bs-btn-hover-bg: rgba(0, 0, 0, 0.023);
+    --bs-btn-hover-bg: white;
     --bs-btn-active-color: white;
     --bs-btn-hover-border-color: white;
     --bs-btn-active-bg: white;

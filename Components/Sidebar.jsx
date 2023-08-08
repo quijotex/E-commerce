@@ -32,15 +32,14 @@ function Sidebar() {
       <i className='bx bx-cart bx-sm'></i>
       </Button>
 
-      <Offcanvas show={show} onHide={handleClose} placement='end'>
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Shopping cart</Offcanvas.Title>
-        </Offcanvas.Header>
+      <Offcanvas  classNam="shopping-cart" show={show} onHide={handleClose} placement='end'>
+       
         <Offcanvas.Body className='render-cart'>
-           
+           <h4 className='shopping-cart__title'>Shopping cart</h4>
           {
+            
             purchases?.map( product => (
-                <li  key={product?.id}>
+                <li className='render-cart__list' key={product?.id}>
                     <div className='cart-modal'>
                      <img src={product?.product?.images[0]?.url} alt=''/>
                         <div className='cart-modal__buttons'>
@@ -55,16 +54,23 @@ function Sidebar() {
                         </div>
                     <button className='modal-button__delete'><i className='bx bx-trash' style={{color: "#eb0d0d"}} ></i></button>
                     </div>
-                    <p>Total</p>
-                    <span>Cantidad</span>
-
-                   
+                    <div className='total-cart'>
+                        <p>Total:</p>
+                        <b>Cantidad</b>
+                    </div>
                 </li>
-                
-            ))
-          }
-         
+             
+                ))
+            }
+            <div className='checkout'>
+                <div className='checkout-total'>
+                    <p>Total:</p>
+                    <b>cantidad</b>
+                </div>
+            <button className='checkout-button'>Checkout</button>
+             </div>
         </Offcanvas.Body>
+        
       </Offcanvas>
     </>
   );
