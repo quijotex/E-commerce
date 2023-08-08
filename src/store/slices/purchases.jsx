@@ -45,7 +45,16 @@ export const updatePurchasesThunk = (id, newQuantity) => dispatch =>
     .then(() => dispatch(getPurchasesThunk() ))
     .catch(error => console.error(error))
     .finally(() => dispatch(setIsLoading(false)))
+}
 
+export const deletePurchasesThunk = (id) => dispatch =>
+{
+    dispatch(setIsLoading(true))
+    axios
+    .delete(`https://e-commerce-api-v2.academlo.tech/api/v1/cart/${id}`, getConfig())
+    .then(() => dispatch(getPurchasesThunk() ))
+    .catch(error => console.error(error))
+    .finally(() => dispatch(setIsLoading(false)))
 }
 
 export const { setPurchases } = purchasesSlice.actions;

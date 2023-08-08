@@ -26,6 +26,7 @@
 .cart-modal img {
     width: 70px;
     height: 60px;
+    object-fit: contain;
 }
 .cart-modal__buttons {
     width: 167px;
@@ -61,7 +62,9 @@
     width: 50px;
     display: flex;
     justify-content: center;
-    align-items: center;   
+    align-items: center;  
+    color: black;
+    font-weight: 400; 
 }
 .modal-button__delete {
     cursor: pointer;
