@@ -4,6 +4,9 @@
 .row>* {
     padding-right: calc(var(--bs-gutter-x) * .3);
 }
+.home-row {
+    margin-top: 80px;
+}
 .col-product-list {
     padding-right: 40px;
     padding-bottom: 40px;
@@ -29,6 +32,15 @@
     height: 45px;
     line-height: 1;
     width: 95px;
+
+   
+    --bs-btn-hover-color: white;
+    --bs-btn-hover-bg: var(--primary);
+    --bs-btn-active-color: white;
+    --bs-btn-active-bg: var(--primary);
+    --bs-btn-active-border-color: white;
+    --bs-btn-disabled-bg: var(--primary);
+  
 }
 .li-products {
     padding: 30px;

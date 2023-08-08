@@ -50,7 +50,7 @@ const ProductsDetail = () => {
     
     return(
         <main>
-            <Container >
+            <Container className="container-detail">
              
                 <nav className="nav">
                 <Link to="/" className="home-link">
@@ -60,7 +60,7 @@ const ProductsDetail = () => {
                 <p className="name-product">{productDetail.title}</p>
                 </nav>
                  <Row className="first-row">
-                    <Col >
+                    <Col className="first-columns">
                    
                         <Carousel className="carousel " interval={null} indicators={false} activeIndex={index} onSelect={handleSelect}>
                                 {productDetail?.images?.map(img => (
@@ -84,7 +84,7 @@ const ProductsDetail = () => {
                         </div>
                     
                     </Col>
-                    <Col>
+                    <Col className="first-columns">
                         <p className="cart-product--brand">{productDetail?.brand}</p>
                         <h2 className="cart-product cart-product--title">{productDetail?.title}</h2>
                         <p className="cart-description">{productDetail?.description}</p>
@@ -105,7 +105,7 @@ const ProductsDetail = () => {
                         <Button onClick={addProduct}className="cart-product__buy"><span>Add to cart</span><i className='bx bx-cart bx-sm'></i></Button>
                     </Col>
                 </Row>
-                 <Row>
+                 <Row className="second-row">
                     <strong className="related-title"> Discover similar items</strong>
                     {allproducts?.map(product => (
                         <Col lg={4} className="card-product" key={product?.id}>

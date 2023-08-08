@@ -3,6 +3,12 @@ nav {
 }
 .navigation {
     border-bottom: 1px solid var(--light-gray);
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
 }
 .navigation__title {
     color: var(--primary);
@@ -10,11 +16,15 @@ nav {
     font-weight: 800;
     text-transform: lowercase;
     padding: 10px 10px;
+    --bs-navbar-brand-hover-color: var(--primary);
+    --bs-navbar-hover-color: var(--primary);
+    --bs-navbar-disabled-color: var(--primary);
+    --bs-navbar-active-color: var(--primary);
+    --bs-navbar-brand-color: var(--primary);
 }
 .navigation__container {
    margin-left: 0;
    padding-right: 0;
-   
 }
 .container {
     margin-left: 0;
@@ -32,6 +42,24 @@ nav {
 .navigation-nav__link {
     width: 210px;
     height: 68px;
-    border-left: 1px solid var(--light-gray);
-    
+    border-left: 1px solid var(--light-gray); 
+}
+.navigation-nav__link .cart-color:hover {
+    color: black
+}
+.button-cart {
+    --bs-btn-padding-x: 0px;
+    --bs-btn-padding-y: 0px;
+    background: white;
+    color: rgba(0, 0, 0, 0.3);
+    --bs-navbar-active-color: #1a1a1a;
+    --bs-btn-hover-bg: rgba(0, 0, 0, 0.023);
+    --bs-btn-active-color: white;
+    --bs-btn-hover-border-color: white;
+    --bs-btn-active-bg: white;
+    --bs-btn-active-border-color: white;
+
+    --bs-btn-hover-color: black;
+    --bs-btn-active-color: black;
+    --bs-btn-disabled-color: black;
 }

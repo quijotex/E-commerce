@@ -33,7 +33,7 @@ const Home = () => {
 
     return(
         <main>
-            <Row>
+            <Row className='home-row'>
                 <Col md={4} lg={3}>
                     <ListGroup>
                         {
