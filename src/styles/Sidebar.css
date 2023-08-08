@@ -1,3 +1,52 @@
 .render-cart {
     list-style: none;
 }
+.cart-modal {
+    display: flex;
+}
+.cart-modal img {
+    width: 70px;
+    height: 70px;
+}
+.cart-modal__buttons {
+    width: 147px;
+    height: 70px;
+}
+.cart-modal__buttons p {
+    font-size: .8rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.cart-modal__quantity {
+    display: flex;
+}
+.cart__quantity {
+    --bs-btn-bg: white;
+    --bs-btn-color: black;
+    --bs-btn-padding-y: none;
+    border: 1px solid var(--light-gray);
+    width: 30px;
+    height: 30px;
+    line-height: 0;
+
+    --bs-btn-hover-color: black;
+   --bs-btn-hover-bg: var(--primary);
+   --bs-btn-active-color: black;
+   --bs-btn-active-bg: var(--primary);
+   --bs-btn-active-border-color: black;
+   --bs-btn-disabled-bg: var(--primary);
+}
+.cart__amount {
+    border: 1px solid var(--light-gray);
+    width: 50px;
+    display: flex;
+   justify-content: center;
+   align-items: center;   
+}
+.modal-button__delete {
+    cursor: pointer;
+    background-color: white;
+    height: 20px;
+    display: flex;
+    border: none;
+}

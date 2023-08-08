@@ -36,16 +36,30 @@ function Sidebar() {
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Shopping cart</Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body >
+        <Offcanvas.Body className='render-cart'>
            
           {
             purchases?.map( product => (
-                <ol  key={product?.id}>
-                    <img src={product?.product?.images[0]?.url} alt=''/>
-                    <Button onClick={() => decrementProduct(product)}>-</Button>
-                    {product?.quantity}
-                    <Button onClick={() => incrementProduct(product)}>+</Button>
-                </ol>
+                <li  key={product?.id}>
+                    <div className='cart-modal'>
+                     <img src={product?.product?.images[0]?.url} alt=''/>
+                        <div className='cart-modal__buttons'>
+                            <p>{product?.product?.title}</p>
+                            <div className='cart-modal__quantity'>
+                                <Button className='cart__quantity' onClick={() => decrementProduct(product)}><i className='bx bx-minus'></i></Button>
+                                <span className="cart__amount">
+                                    {product?.quantity}
+                                </span>
+                                <Button className='cart__quantity' onClick={() => incrementProduct(product)}><i className='bx bx-plus' ></i></Button>
+                            </div>
+                        </div>
+                    <button className='modal-button__delete'><i className='bx bx-trash' style={{color: "#eb0d0d"}} ></i></button>
+                    </div>
+                    <p>Total</p>
+                    <span>Cantidad</span>
+
+                   
+                </li>
                 
             ))
           }

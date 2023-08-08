@@ -2,7 +2,6 @@
     overflow-x: hidden;
 }
 .nav {
-    
     margin-top: 120px;
     margin-left: 70px;
     display: flex;
@@ -29,10 +28,10 @@
 }
 .first-row {
     padding-right: 90px;
-   padding-left: 50px;
+    padding-left: 50px;
 }
 .first-columns {
-padding: 60px;
+    padding: 60px;
 }
 .second-row {
     padding-right: 90px;
