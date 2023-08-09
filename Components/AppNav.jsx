@@ -22,7 +22,7 @@ function AppNav( ) {
           
             <Nav.Link as={ Link } className='navigation-nav__link' to={ token ? "/purchases" : "/login"}><i className='bx bx-store bx-sm cart-color' ></i></Nav.Link> 
             
-            <Nav.Link as={ Link } className='navigation-nav__link' to={token ? "" : "/login" }>
+            <Nav.Link as={ Link } className='navigation-nav__link' to={token ? null : "/login" }>
               <Sidebar/>
               {purchases.length !== 0 ? 
               <div className='number-cart'>

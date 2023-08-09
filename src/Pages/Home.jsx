@@ -10,6 +10,7 @@ import { addPurchaseThunk } from '../store/slices/purchases';
 import axios from 'axios';
 import Card from 'react-bootstrap/Card';
 import Accordion from 'react-bootstrap/Accordion';
+import Filter from '../../Components/Filter';
 
 const Home = ( ) => {
     const products = useSelector(state => state.products)
@@ -58,7 +59,7 @@ const Home = ( ) => {
                     </Accordion.Item>
                 </Accordion>
                 </Col>
-                <Col md={8}  xl={9} className='col-product-list'>
+                <Col xl={9} className='col-product-list'>
                     <Row>
                         <Col>
                             <InputGroup className="searcher">
@@ -70,6 +71,9 @@ const Home = ( ) => {
                                 />
                             <Button  onClick={() => dispatch(filterProductsByNameThunk(searchValue) )} className='searcher-button'><i className='bx bx-search'></i></Button>
                             </InputGroup>
+                            <div className='filter'>
+                            <Filter categories={categories}/>
+                            </div>
                         </Col>
                     </Row>
                     <Row  xs={1} md={2} lg= {2} xl={3}>

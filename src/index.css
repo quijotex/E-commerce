@@ -4,6 +4,8 @@
 @import url(/src/styles/FooterLayout.css);
 @import url(/src/styles/Login.css);
 @import url(/src/styles/Sidebar.css);
+@import url(/src/styles/Filter.css);
+
 * {
   margin: 0;
   padding: 0;
@@ -41,21 +43,128 @@
 }
 .first-columns {
   padding:  40px 40px 0px;
-  
-
+}
+.nav {
+  margin-top: 90px;
+  margin-left: 50px;
 }
 
 }
 @media (max-width: 768px){
 
 .container, .container-md, .container-sm {
-    max-width: 100%;
+    max-width: 768px;
     padding: 0px;
 }
+
+/*Home*/
+
+.home-row {
+  max-width: 768px;
 }
-@media (max-width: 576px) {
+.searcher {
+  margin-bottom: 10px;
+  padding: 0px 25px;
+}
+.filter {
+  display: flex;
+  margin: 0px 30px;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.accordion-col {
+  display: none;
+}
+/*AppNav*/
+
+.navigation {
+  border-bottom: none;
+  max-width: 768px;
+}
+.navigation__title {
+  font-size: 1.5rem;
+}
+.navigation-nav__link {
+  width: 115px;
+  height: 59px;
+  border-left: none; 
+}
+
+/*Filter category*/
+
+.accordion-button {
+  width: 250px;
+}
+
+}
+@media (max-width: 425px) {
 
 .container, .container-sm {
-    max-width: 100%;
+    max-width: 425px;
+}
+/*Home*/
+.home-row {
+  max-width: 425px;
+}
+/*AppNav*/
+.navigation-nav__link {
+  width: 63px;
+}
+/*Footer*/
+.footer__developers {
+  gap: 50px;
+}
+.footer__developers h2  {
+  font-size: 1rem;
+}
+/*ProductDetail*/
+.gallery-mini {
+  display: none;
+}
+.nav {
+  margin-top: 75px;
+  margin-left: 25px;
+}
+.carousel {
+  padding: 0px 50px;
+}
+.first-columns {
+  padding: 10px 20px 0px
+}
+.first-row {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.view-main {
+  display: none;
+}
+.view-responsive {
+  display: flex;
+  flex-direction: column;
+}
+.second-row {
+  padding: 0px 30px 0px 30px;
+}
+.card-product {
+  padding-left: 0px;
+}
+}
+@media (max-width: 375px) {
+  .container, .container-sm {
+    max-width: 375px;
+}
+/*Home*/
+.home-row {
+  max-width: 375px;
+}
+
+/*Login*/
+.info-logout--adjust, .form-login__data {
+  width: 340px;
+}
+ 
+/*Footer*/
+.footer__developers {
+  gap: 25px;
 }
 }

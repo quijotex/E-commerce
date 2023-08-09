@@ -1,0 +1,36 @@
+.filter-modal {
+    top: 0;
+    right: 0;
+    --bs-offcanvas-width: 300px;
+    --bs-offcanvas-transition: transform 0.8s ease-in-out;
+}
+.offcanvas-backdrop {
+    background-color: rgba(255, 255, 255, 0);
+}
+.shopping-cart__title {
+    text-transform: capitalize;
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    letter-spacing: 0;
+}
+.render-cart {
+    list-style: none;
+    margin-bottom: 100px;
+}
+.button-filter {
+    color: var(--gray);
+    font-size: .95rem;
+    margin: 0 0 10px auto;
+    font-weight: 400;
+    display: flex;
+}
+.button-filter i {
+    margin-right: 10px;
+}
+.name-filter {
+    text-transform: capitalize;
+}
+.close-filter {
+    align-items: start ;
+    padding-bottom: 0;
+}

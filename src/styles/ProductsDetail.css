@@ -264,3 +264,10 @@
     font-weight: 600;
     font-size: 1.1rem;
 }
+.view-main {
+    display: flex;
+    flex-direction: column;
+}
+.view-responsive {
+    display: none;
+}

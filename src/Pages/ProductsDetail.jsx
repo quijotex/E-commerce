@@ -71,7 +71,6 @@ const ProductsDetail = () => {
                 </nav>
                  <Row className="first-row">
                     <Col className="first-columns">
-                   
                         <Carousel className="carousel " interval={null} indicators={false} activeIndex={index} onSelect={handleSelect}>
                                 {productDetail?.images?.map(img => (
                                      <Carousel.Item  key={img?.id}>
@@ -92,13 +91,44 @@ const ProductsDetail = () => {
                                 ))
                                 }
                         </div>
-                    
                     </Col>
                     <Col className="first-columns">
+                    <div className="view-main">
                         <p className="cart-product--brand">{productDetail?.brand}</p>
+
                         <h2 className="cart-product cart-product--title">{productDetail?.title}</h2>
+
                         <p className="cart-description">{productDetail?.description}</p>
+
                         <div className="price-quantity">
+                            <div className="price-quantity--price">
+                                <h3>Price</h3>
+                                <p className="cart-product cart-product--amount">$ {productDetail?.price}</p>
+                            </div>
+
+                            <div className="price-quantity__quantity">
+                                <p>Quantity</p>
+                                <div className="price-quantity__buttons">
+                                    <button onClick={() => setQuantity(quantity - 1)} disabled={quantity === 1 }><i className='bx bx-minus'></i></button>
+                                    <span className="quantity__amount">{quantity}</span>
+                                    <button onClick={() => setQuantity(quantity + 1)}><i className='bx bx-plus' ></i></button>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <Button onClick={addProduct}className="cart-product__buy"><span>Add to cart</span><i className='bx bx-cart bx-sm'></i></Button>
+             </div>
+
+
+                <div className="view-responsive">
+                <p className="cart-product--brand">{productDetail?.brand}</p>
+
+                        <h2 className="cart-product cart-product--title">{productDetail?.title}</h2>
+
+                        <div className="price-quantity">
+
                             <div className="price-quantity--price">
                                 <h3>Price</h3>
                                 <p className="cart-product cart-product--amount">$ {productDetail?.price}</p>
@@ -110,9 +140,14 @@ const ProductsDetail = () => {
                                     <span className="quantity__amount">{quantity}</span>
                                     <button onClick={() => setQuantity(quantity + 1)}><i className='bx bx-plus' ></i></button>
                                 </div>
+
                             </div>
+
                         </div>
                         <Button onClick={addProduct}className="cart-product__buy"><span>Add to cart</span><i className='bx bx-cart bx-sm'></i></Button>
+
+                        <p className="cart-description">{productDetail?.description}</p>
+                </div>
                     </Col>
                 </Row>
                  <Row className="second-row">

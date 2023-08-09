@@ -15,7 +15,8 @@ nav {
     font-size: 2rem;
     font-weight: 800;
     text-transform: lowercase;
-    padding: 10px 10px;
+    padding: 10px 15px;
+  
     --bs-navbar-brand-hover-color: var(--primary);
     --bs-navbar-hover-color: var(--primary);
     --bs-navbar-disabled-color: var(--primary);
