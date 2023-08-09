@@ -5,7 +5,19 @@
     background-color: rgb(245, 244, 244);
     margin-top: 65px;
 }
-.form-login__data {
+.logout-view {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    width: 100%;
+}
+.info-logout img {
+    width: 90px;
+    height: 90px;
+}
+
+.form-login__data, .info-logout  {
     background: #fff;
     border-radius: 10px;
     max-width: 400px;
@@ -13,10 +25,33 @@
     width: 100%;
     margin: 20px 0px;   
 }
+.info-logout--adjust {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
 .form-login__data strong {
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 1.6;
+}
+.test-data {
+    background: #d8f5fd;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    padding: 12px;
+}
+.test-data b {
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: black;
+}
+.data-access {
+    color: black;
+    font-weight: 400;
 }
 .login-message {
     color: #2fa8f8;
@@ -31,6 +66,13 @@
     margin: 10px 0 25px;
     padding: 9px;
     width: 100%;
+
+    --bs-btn-hover-color: white;
+    --bs-btn-hover-bg: var(--primary);
+    --bs-btn-active-color: white;
+    --bs-btn-active-bg: var(--primary);
+    --bs-btn-active-border-color: white;
+    --bs-btn-disabled-bg: var(--primary);
 }
 .form-label {
     font-weight: 400;

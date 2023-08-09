@@ -2,7 +2,8 @@ import { useForm } from 'react-hook-form'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import UserLogIn from '../assets/UserLogIn.svg'
 
 const Login = () => {
 
@@ -22,11 +23,36 @@ const Login = () => {
             }
             })
         }
+
+        const token = localStorage.getItem("token")
+
+        const deleteToken = () => {
+            localStorage.removeItem("token")
+        }
+
     return(
         <main className='form-login'>
-           <Form className="form-login__data" onSubmit={handleSubmit(submit)}>
+            {token ? 
+            <div className="logout-view">
+                <div className='info-logout info-logout--adjust'>
+                <div>
+                    <img src={UserLogIn} alt=''/>
+                </div>
+                <b>John Due</b>
+                <Link to='/login' onClick={deleteToken}>Log out</Link>
+                </div>
+            </div>
+                :
+          <Form className="form-login__data" onSubmit={handleSubmit(submit)}>
             <strong>Welcome! Enter your email and password to continue</strong>
             <p className='login-message'>You have to Log In to access to your cart</p>
+            <div className='test-data'>
+                <b>Test data</b>
+                <div className='data-access'>
+                    <p><i className='bx bx-envelope'></i> john@gmail.com</p>
+                    <p><i className='bx bx-lock-alt' ></i>john1234</p>
+                </div>
+            </div>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label className='input-label'>Email</Form.Label>
                     <Form.Control className="input-login" type="email" 
@@ -46,7 +72,8 @@ const Login = () => {
                 <Button className="button-login" variant="primary" type="submit">
                     Login
                 </Button>
-             </Form>
+    </Form> 
+}
         </main>
     )
 }

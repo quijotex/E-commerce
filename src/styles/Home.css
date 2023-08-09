@@ -42,6 +42,35 @@
     --bs-btn-disabled-bg: var(--primary);
   
 }
+.accordion-col {
+    padding: 50px 20px 20px;
+    width: 300px;
+}
+.accordion {
+    margin-top: 50px;
+}
+.accordion-button {
+    align-items: center;
+    border-bottom: 2px solid var(--light-gray);
+    cursor: pointer;
+    display: flex;
+    font-size: 1.1rem;
+    font-weight: 600;
+    height: 40px;
+    justify-content: space-between;
+    padding: 1px;
+    width: 218px;
+}
+.accordion-item {
+    width: 220px;
+}
+.accordionHeader {
+    font-size: 60px;
+     color: black;
+}
+ .accordionBody {
+    font-weight: bold;
+}
 .li-products {
     padding: 30px;
 }

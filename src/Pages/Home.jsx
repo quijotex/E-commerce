@@ -8,8 +8,8 @@ import { useEffect, useState } from 'react';
 import { getProductsThunk, filterProductsByCategoryThunk, filterProductsByNameThunk } from '../store/slices/products';
 import { addPurchaseThunk } from '../store/slices/purchases';
 import axios from 'axios';
-import ListGroup from 'react-bootstrap/ListGroup';
 import Card from 'react-bootstrap/Card';
+import Accordion from 'react-bootstrap/Accordion';
 
 const Home = ( ) => {
     const products = useSelector(state => state.products)
@@ -43,17 +43,38 @@ const Home = ( ) => {
     return(
         <main>
             <Row className='home-row'>
-                <Col md={4} lg={3}>
-                    <ListGroup>
+                <Col md={4} lg={3} className='accordion-col'>      
+                <Accordion  alwaysOpen  className='accordion'>
+                <Accordion.Item eventKey="0">
+                 <Accordion.Header className='accordionHeader'>Price</Accordion.Header>
+                    <Accordion.Body  className='accordionBody'> 
+                        <Form>
+                            <Form.Group>
+                            <Form.Label>From</Form.Label><Form.Control type="email" />
+                                    <Form.Text className="text-muted">
+                                </Form.Text>
+                                </Form.Group>
+                            <Form.Group>
+                            <Form.Label>To</Form.Label>
+                            <Form.Control type="email" />
+                                    <Form.Text className="text-muted">
+                                </Form.Text>
+                            </Form.Group>
+                        </Form>
+                     </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="1">
+                    <Accordion.Header>Category</Accordion.Header> 
                         {
-                            categories?.map( category => (
-                                <ListGroup.Item key={category.id}
-                                onClick={() => dispatch(filterProductsByCategoryThunk(category.id) )}>
-                                    {category.name}
-                                </ListGroup.Item>
-                            ))
+                        categories?.map( category => (
+                            <Accordion.Body key={category.id } className='accordionBody'
+                            onClick={() => dispatch(filterProductsByCategoryThunk(category.id) )}   >
+                            {category.name}
+                            </Accordion.Body>
+                                ))
                         }
-                    </ListGroup>
+                    </Accordion.Item>
+                </Accordion>
                 </Col>
                 <Col md={8} lg={9} className='col-product-list'>
                     <Row>
