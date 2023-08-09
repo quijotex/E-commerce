@@ -1,0 +1,72 @@
+/*------Stilo del ul contenedor del listado de purcheses----------*/
+.navigation__container, .navigation {
+    max-width: 1440px;
+}
+.nav-purchases {
+    width: 375px;
+}
+.ulPurchases{
+    list-style: none;
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+   /*------Stilo del li contenedor del listado de purcheses----------*/
+.liPurchases{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    margin: 20px;
+    width: 800px;
+}
+
+.my-purchases {
+    margin: 20px 70px 40px;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+   /*--Contenedor de la imagen */
+.conteImgPurchases{
+    width: 148px;
+    object-fit:contain;
+}
+   /*-------Tamaño de la Imgena*/
+.conteImgPurchases img {
+    width: 148px;
+    object-fit: contain;
+    height: 80px;
+}
+   /* div  o contendor del titulo */
+.divTitlePurchases{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 300px;
+}
+   /*div contenedor del la fecha */
+.divDatePurcheses{
+     display: flex;
+     align-items: center;
+     width: 100px;
+   }
+   /*Div contenedor del precio  */
+.divPricePurchese{
+    display: flex;
+    align-items: center;
+}
+.quantity-purchases {
+    border: 1px solid var(--light-gray);
+    margin: 0 auto;
+    width: 50px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+
+}
+
