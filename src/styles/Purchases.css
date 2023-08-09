@@ -23,7 +23,9 @@
     margin: 20px;
     width: 800px;
 }
-
+.divContTitlePurchases {
+    padding: 0px 230px;
+}
 .my-purchases {
     margin: 20px 70px 40px;
     font-size: 1.4rem;

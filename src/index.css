@@ -51,6 +51,9 @@
 }
 /*Purchases*/
 .divContTitlePurchases {
+  padding: 0px 0px;
+}
+.divContTitlePurchases {
   margin-left: 40px;
 }
 .nav-purchases {
@@ -174,7 +177,10 @@
   padding-right: 32px;
 }
 .liPurchases {
-  width: 350px;
+  width: 300px;
+}
+.liPurchases {
+  width: 280px;
 }
 .nav-purchases {
   width: 300px;
@@ -217,11 +223,8 @@
 }
  
 /* Purchases*/
-.li-purchases {
-  width: 300px;
-}
+
 .liPurchases {
-  width: 280px;
   margin: 0px;
 }
 .nav-purchases {
