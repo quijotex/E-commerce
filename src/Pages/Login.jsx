@@ -4,11 +4,14 @@ import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import UserLogIn from '../assets/UserLogIn.svg'
+import getConfig from '../helpers/getConfig';
+import { useState } from 'react';
 
 const Login = () => {
 
         const { register, handleSubmit } = useForm()
         const navigate = useNavigate()
+        const [ user, setUser ] = useState({})
 
         const submit = data => {
             axios
@@ -24,6 +27,11 @@ const Login = () => {
             })
         }
 
+        axios
+        .get("https://e-commerce-api-v2.academlo.tech/api/v1/users/me", getConfig())
+        .then(resp => setUser(resp?.data))
+        .catch((error) => console.error(error))
+
         const token = localStorage.getItem("token")
 
         const deleteToken = () => {
@@ -38,7 +46,7 @@ const Login = () => {
                 <div>
                     <img src={UserLogIn} alt=''/>
                 </div>
-                <b>John Due</b>
+                <b>{user.firstName} {user.lastName}</b>
                 <Link to='/login' onClick={deleteToken}>Log out</Link>
                 </div>
             </div>

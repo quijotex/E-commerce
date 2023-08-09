@@ -8,8 +8,9 @@ import { useNavigate } from 'react-router-dom';
 
 function Sidebar() {
   const [show, setShow] = useState(false);
+
   const purchases = useSelector(state => state.purchases)
- const navigate = useNavigate()
+  const navigate = useNavigate()
  
 
   const handleClose = () => setShow(false);
@@ -20,6 +21,7 @@ function Sidebar() {
     } else {
         navigate('/')
     };
+    
 }
   const dispatch = useDispatch()
   
@@ -43,7 +45,6 @@ function Sidebar() {
   const deletePurchase = (id) => {
     dispatch(deletePurchasesThunk(id))
   }
-
 
   return (
     <>

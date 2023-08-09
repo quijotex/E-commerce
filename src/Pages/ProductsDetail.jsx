@@ -118,7 +118,7 @@ const ProductsDetail = () => {
                  <Row className="second-row">
                     <strong className="related-title"> Discover similar items</strong>
                     {allproducts?.map(product => (
-                        <Col lg={4} className="card-product" key={product?.id}>
+                        <Col lg={6} xl={4}className="card-product" key={product?.id}>
                        
                             <Card className="card-product__detail" >
                                 <a className="card-product__anchor" href={`#/products/${product.id}`} onClick={scrollToTop}> 

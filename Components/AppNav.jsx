@@ -3,14 +3,13 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Sidebar from './Sidebar';
 import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function AppNav( ) {
+ 
+  const purchases = useSelector(state => state.purchases);
 
-  const navigate = useNavigate()
   const token = localStorage.getItem("token")
-  
-  
  
  
 
@@ -25,6 +24,13 @@ function AppNav( ) {
             
             <Nav.Link as={ Link } className='navigation-nav__link' to={token ? "" : "/login" }>
               <Sidebar/>
+              {purchases.length !== 0 ? 
+              <div className='number-cart'>
+              <span className='number-style'>
+                {purchases.length}
+                </span>
+              </div>
+              : ""}
               </Nav.Link>
           </Nav>
        

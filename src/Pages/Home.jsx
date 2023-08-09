@@ -42,27 +42,9 @@ const Home = ( ) => {
        
     return(
         <main>
-            <Row className='home-row'>
+            <Row  className='home-row'>
                 <Col md={4} lg={3} className='accordion-col'>      
                 <Accordion  alwaysOpen  className='accordion'>
-                <Accordion.Item eventKey="0">
-                 <Accordion.Header className='accordionHeader'>Price</Accordion.Header>
-                    <Accordion.Body  className='accordionBody'> 
-                        <Form>
-                            <Form.Group>
-                            <Form.Label>From</Form.Label><Form.Control type="email" />
-                                    <Form.Text className="text-muted">
-                                </Form.Text>
-                                </Form.Group>
-                            <Form.Group>
-                            <Form.Label>To</Form.Label>
-                            <Form.Control type="email" />
-                                    <Form.Text className="text-muted">
-                                </Form.Text>
-                            </Form.Group>
-                        </Form>
-                     </Accordion.Body>
-                </Accordion.Item>
                 <Accordion.Item eventKey="1">
                     <Accordion.Header>Category</Accordion.Header> 
                         {
@@ -76,7 +58,7 @@ const Home = ( ) => {
                     </Accordion.Item>
                 </Accordion>
                 </Col>
-                <Col md={8} lg={9} className='col-product-list'>
+                <Col md={8}  xl={9} className='col-product-list'>
                     <Row>
                         <Col>
                             <InputGroup className="searcher">
@@ -90,7 +72,7 @@ const Home = ( ) => {
                             </InputGroup>
                         </Col>
                     </Row>
-                    <Row  xs={1} md={2} lg={3}>
+                    <Row  xs={1} md={2} lg= {2} xl={3}>
                             {products?.map(product => (
                                 <Col className="li-products"  key={product.id}>
                                     <Card className="card-product__detail" >
