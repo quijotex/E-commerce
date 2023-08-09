@@ -1,9 +1,9 @@
 import { useParams, Link } from "react-router-dom"
-import axios from 'axios'
+import axios, { all } from 'axios'
 import { useState, useEffect } from 'react'
 import Button from 'react-bootstrap/Button';
 import { filterProductsByCategoryThunk } from "../store/slices/products";
-import { addPurchaseThunk, setPurchases } from "../store/slices/purchases";
+import { addPurchaseThunk } from "../store/slices/purchases";
 import { useSelector, useDispatch } from "react-redux";
 import { Col, Row, Container }from "react-bootstrap";
 import Card from 'react-bootstrap/Card';
@@ -47,6 +47,16 @@ const ProductsDetail = () => {
         }
         dispatch( addPurchaseThunk( data))
      }
+
+     const addCartProduct = ( item ) => {
+        const data = {
+            quantity: 1,
+            productId: item
+        }
+       
+        dispatch( addPurchaseThunk( data ))
+    }
+     
     
     return(
         <main>
@@ -132,7 +142,7 @@ const ProductsDetail = () => {
                                      </Card.Body>
                                  </a>
                                  <div className="card-product__button" >
-                                    <Button variant="primary"><i className='bx bx-cart'></i></Button>
+                                    <Button onClick={() => addCartProduct(product?.id)} variant="primary"><i className='bx bx-cart'></i></Button>
                                  </div>
                              </Card>
                          </Col>

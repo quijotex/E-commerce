@@ -3,26 +3,29 @@ import { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { useSelector, useDispatch } from 'react-redux';
-import { getPurchasesThunk, updatePurchasesThunk, deletePurchasesThunk } from '../src/store/slices/purchases';
+import { getPurchasesThunk, updatePurchasesThunk, deletePurchasesThunk, purchaseCartThunk } from '../src/store/slices/purchases';
+import { useNavigate } from 'react-router-dom';
 
 function Sidebar() {
   const [show, setShow] = useState(false);
-  const [ total, setTotal ] = useState(0)
   const purchases = useSelector(state => state.purchases)
- 
+ const navigate = useNavigate()
  
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
- 
+  const handleShow = () => {
+    const token = localStorage.getItem("token")
+    if(token) {
+        setShow(true)
+    } else {
+        navigate('/')
+    };
+}
   const dispatch = useDispatch()
   
 
   useEffect(() => {
     dispatch(getPurchasesThunk())
-   
-  
-
   }, [])
   
 
@@ -47,7 +50,6 @@ function Sidebar() {
       <Button className='button-cart' onClick={handleShow}>
       <i className='bx bx-cart bx-sm'></i>
       </Button>
-
       <Offcanvas  className="shopping-cart" show={show} onHide={handleClose} placement='end'>
        
         <Offcanvas.Body className='render-cart'>
@@ -82,7 +84,7 @@ function Sidebar() {
                     <p>Total:</p>
                     <b>{amount?.reduce((a, b) => a + b, 0 )}</b>
                 </div>
-            <button className='checkout-button'>Checkout</button>
+            <button onClick={() => dispatch( purchaseCartThunk())}className='checkout-button'>Checkout</button>
              </div>
         </Offcanvas.Body>
         

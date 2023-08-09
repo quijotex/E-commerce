@@ -11,23 +11,26 @@ import { useSelector } from 'react-redux'
 import ProtectedRoutes from '../Components/ProtectedRoutes';
 import FooterLayout from '../Components/FooterLayout';
 
+
 function App() {
 
   const isLoading = useSelector(state => state.isLoading)
+  
 
   return (
     <HashRouter>
-      <AppNav />
+         <AppNav />
       <Container>
         <Routes>
             <Route element={<FooterLayout/>}>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Home/>} />
               <Route path="/login" element={<Login />} />
               <Route path="/products/:id" element={<ProductsDetail />} />
               <Route element={ <ProtectedRoutes/> }> 
                 <Route path="/purchases" element={<Purchases />} />
               </Route>
           </Route>
+          
         </Routes>
       </Container>
 

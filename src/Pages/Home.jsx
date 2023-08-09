@@ -1,22 +1,23 @@
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import ProductsCard from '/Components/ProductsCard'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
-import { getProductsThunk, filterProductsByCategoryThunk, filterProductsByNameThunk  } from '../store/slices/products';
+import { getProductsThunk, filterProductsByCategoryThunk, filterProductsByNameThunk } from '../store/slices/products';
+import { addPurchaseThunk } from '../store/slices/purchases';
 import axios from 'axios';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Card from 'react-bootstrap/Card';
 
-const Home = () => {
+const Home = ( ) => {
     const products = useSelector(state => state.products)
+
     const dispatch = useDispatch()
     const [ categories, setCategories ] = useState([])
     const [ searchValue, setSearchValue ] = useState("")
-    
+   
 
     useEffect(() =>{
         dispatch( getProductsThunk())
@@ -31,6 +32,14 @@ const Home = () => {
         .catch(error => console.error(error))
     }
 
+    const addCartProduct = ( item ) => {
+        const data = {
+            quantity: 1,
+            productId: item
+        }
+        dispatch( addPurchaseThunk( data ))       
+} 
+       
     return(
         <main>
             <Row className='home-row'>
@@ -85,7 +94,7 @@ const Home = () => {
                                         </Card.Body>
                                         </a>
                                         <div className="card-product__button" >
-                                        <Button variant="primary"><i className='bx bx-cart'></i></Button>
+                                        <Button onClick={() => addCartProduct(product?.id)} variant="primary"><i className='bx bx-cart'></i></Button>
                                         </div>
                                      </Card>
                                 </Col>
