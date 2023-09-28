@@ -1,3 +1,4 @@
+
 import { useForm } from 'react-hook-form'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -80,6 +81,9 @@ const Login = () => {
                 <Button className="button-login" variant="primary" type="submit">
                     Login
                 </Button>
+                <div className='signup-account'><p>Don't have an account? </p>
+                <Link to='/signup'>Sign up</Link>
+                </div>
     </Form> 
 }
         </main>

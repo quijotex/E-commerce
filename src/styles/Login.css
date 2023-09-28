@@ -25,6 +25,14 @@
     width: 100%;
     margin: 20px 0px;   
 }
+/* Signup*/
+.signup_data {
+   margin: auto;
+   margin-top: 100px;
+}
+.signup-title {
+    margin-bottom: 15px;
+}
 .info-logout--adjust {
     display: flex;
     flex-direction: column;
@@ -84,4 +92,13 @@
     margin-top: 4px;
     padding: 6px 8px;
     width: 100%;
+}
+.signup-account {
+    display: flex;
+    gap: 8px;
+    font-weight: 400;
+}
+.signup-account a {
+    text-decoration: none;
+    color: #2fa8f8;
 }
