@@ -13,7 +13,7 @@ const Signup = () => {
 
   const submit = data => {
     axios
-    .post( "https://e-commerce-api-v2.academlo.tech/api/v1/users/", data)
+    .post( "https://ecommerce-app-backend-ezn6.onrender.com/users/", data)
     .then( resp => {
         resp?.data
         alert('User was created succesfully. Now, you can log in!')

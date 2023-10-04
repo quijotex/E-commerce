@@ -5,18 +5,18 @@ import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import UserLogIn from '../assets/UserLogIn.svg'
-import getConfig from '../helpers/getConfig';
-import { useState } from 'react';
+/*import getConfig from '../helpers/getConfig';
+import { useState } from 'react';*/
 
 const Login = () => {
 
         const { register, handleSubmit } = useForm()
         const navigate = useNavigate()
-        const [ user, setUser ] = useState({})
+     /*   const [ user, setUser ] = useState({})*/
 
         const submit = data => {
             axios
-            .post( "https://e-commerce-api-v2.academlo.tech/api/v1/users/login", data)
+            .post( "https://ecommerce-app-backend-ezn6.onrender.com/users/login", data)
             .then( resp => {
                 localStorage.setItem("token", resp?.data?.token)
                 navigate("/")
@@ -28,11 +28,11 @@ const Login = () => {
             })
         }
 
-        axios
+      /*  axios
         .get("https://e-commerce-api-v2.academlo.tech/api/v1/users/me", getConfig())
         .then(resp => setUser(resp?.data))
         .catch((error) => console.error(error))
-
+*/
         const token = localStorage.getItem("token")
 
         const deleteToken = () => {
@@ -47,7 +47,8 @@ const Login = () => {
                 <div>
                     <img src={UserLogIn} alt=''/>
                 </div>
-                <b>{user.firstName} {user.lastName}</b>
+
+               { /* <b>{user.firstName} {user.lastName}</b> */ }
                 <Link to='/login' onClick={deleteToken}>Log out</Link>
                 </div>
             </div>
@@ -81,7 +82,8 @@ const Login = () => {
                 <Button className="button-login" variant="primary" type="submit">
                     Login
                 </Button>
-                <div className='signup-account'><p>Don't have an account? </p>
+                <div className='signup-account'>
+                    <p>Don`t have an account? </p>
                 <Link to='/signup'>Sign up</Link>
                 </div>
     </Form> 

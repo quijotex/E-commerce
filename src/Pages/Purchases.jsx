@@ -12,7 +12,7 @@ const Purchases = () => {
     useEffect(() => {
         dispatch(setIsLoading(true))
         axios
-            .get("https://e-commerce-api-v2.academlo.tech/api/v1/purchases", getConfig())
+            .get("https://ecommerce-app-backend-ezn6.onrender.com/purchases", getConfig())
             .then(resp => setPurchases(resp.data))
             .catch(error => console.error(error))
             .finally(() => dispatch(setIsLoading(false)))
