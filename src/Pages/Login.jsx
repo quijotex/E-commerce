@@ -12,11 +12,11 @@ const Login = () => {
 
         const { register, handleSubmit } = useForm()
         const navigate = useNavigate()
-        const [ user, setUser ] = useState({})
+    /* const [ user, setUser ] = useState({}) */
 
         const submit = data => {
             axios
-            .post( "https://e-commerce-api-v2.academlo.tech/api/v1/users/login", data)
+            .post( "https://app-ecommerce-0oc8.onrender.com/users/login", data)
             .then( resp => {
                 localStorage.setItem("token", resp?.data?.token)
                 navigate("/");
@@ -28,10 +28,10 @@ const Login = () => {
             })
         }
 
-        axios
-        .get("https://e-commerce-api-v2.academlo.tech/api/v1/users/me", getConfig())
+      /*  axios
+        .get("https://app-ecommerce-0oc8.onrender.com/users/me", getConfig())
         .then(resp => setUser(resp?.data))
-        .catch((error) => console.error(error))
+        .catch((error) => console.error(error)) */
 
         const token = localStorage.getItem("token")
 
@@ -47,7 +47,7 @@ const Login = () => {
                 <div>
                     <img src={UserLogIn} alt=''/>
                 </div>
-                <b>{user.firstName} {user.lastName}</b>
+             {/*   <b>{user.firstName} {user.lastName}</b> */}
                 <Link to='/login' onClick={deleteToken}>Log out</Link>
                 </div>
             </div>
