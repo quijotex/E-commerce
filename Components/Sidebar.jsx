@@ -32,11 +32,11 @@ function Sidebar() {
   
 
   const incrementProduct = updateProducts => {
-    dispatch( updatePurchasesThunk( updateProducts.id, updateProducts.quantity + 1))
+    dispatch( updatePurchasesThunk( updateProducts?.id, updateProducts?.quantity + 1))
   }
   const decrementProduct = updateProducts => {
     if( updateProducts.quantity > 1) {
-    dispatch( updatePurchasesThunk( updateProducts.id, updateProducts.quantity - 1 ))
+    dispatch( updatePurchasesThunk( updateProducts?.id, updateProducts?.quantity - 1 ))
     }
   }
 

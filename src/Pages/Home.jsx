@@ -28,7 +28,7 @@ const Home = ( ) => {
     const getCategories = () => {
 
         axios
-        .get("https://e-commerce-api-v2.academlo.tech/api/v1/categories")
+        .get("https://app-ecommerce-0oc8.onrender.com/categories")
         .then( resp => setCategories(resp?.data))
         .catch(error => console.error(error))
     }
@@ -51,7 +51,7 @@ const Home = ( ) => {
                         {
                         categories?.map( category => (
                             <Accordion.Body key={category.id } className='accordionBody'
-                            onClick={() => dispatch(filterProductsByCategoryThunk(category.id) )}   >
+                            onClick={() => dispatch(filterProductsByCategoryThunk(category?.id) )}   >
                             {category.name}
                             </Accordion.Body>
                                 ))

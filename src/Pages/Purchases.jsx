@@ -12,8 +12,8 @@ const Purchases = () => {
     useEffect(() => {
         dispatch(setIsLoading(true))
         axios
-            .get("https://e-commerce-api-v2.academlo.tech/api/v1/purchases", getConfig())
-            .then(resp => setPurchases(resp.data))
+            .get("https://app-ecommerce-0oc8.onrender.com/purchases", getConfig())
+            .then(resp => setPurchases(resp?.data))
             .catch(error => console.error(error))
             .finally(() => dispatch(setIsLoading(false)))
     }, [])
@@ -43,7 +43,7 @@ const Purchases = () => {
                 {
                     purchases?.map( item => (
                    
-                        <li className="li-purchases" key={item.id} >
+                        <li className="li-purchases" key={item?.id} >
                              <div className='liPurchases'>
                             <div className='conteImgPurchases'>
                                  <img src={item?.product?.images[0]?.url} />

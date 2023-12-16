@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom"
-import axios, { all } from 'axios'
+import axios from 'axios'
 import { useState, useEffect } from 'react'
 import Button from 'react-bootstrap/Button';
 import { filterProductsByCategoryThunk } from "../store/slices/products";
@@ -17,6 +17,7 @@ const ProductsDetail = () => {
      const [ quantity, setQuantity ] = useState(1)
 
      const allproducts = useSelector(state => state.products)
+  
      const dispatch = useDispatch()
     
    
@@ -26,7 +27,7 @@ const ProductsDetail = () => {
 
      const getDetail = () => {
         axios
-        .get( `https://e-commerce-api-v2.academlo.tech/api/v1/products/${id}`)
+        .get( `https://app-ecommerce-0oc8.onrender.com/products/${id}`)
         .then(resp => { setProductDetail(resp?.data);
          dispatch(filterProductsByCategoryThunk(resp?.data?.category?.id))})
         .catch(error => console.error(error))
@@ -156,7 +157,7 @@ const ProductsDetail = () => {
                         <Col lg={6} xl={4}className="card-product" key={product?.id}>
                        
                             <Card className="card-product__detail" >
-                                <a className="card-product__anchor" href={`#/products/${product.id}`} onClick={scrollToTop}> 
+                                <a className="card-product__anchor" href={`#/products/${product?.id}`} onClick={scrollToTop}> 
                                     <div className="card-product__images">
                                     <Card.Img className="card-detail__img1" variant="top" src={product?.images[0]?.url} />
                                     <Card.Img className="card-detail__img2" variant="top" src={product?.images[1]?.url} />
