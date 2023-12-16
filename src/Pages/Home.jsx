@@ -28,7 +28,7 @@ const Home = ( ) => {
     const getCategories = () => {
 
         axios
-        .get("https://app-ecommerce-0oc8.onrender.com/categories")
+        .get("https://e-commerce-api-v2.academlo.tech/api/v1/categories")
         .then( resp => setCategories(resp?.data))
         .catch(error => console.error(error))
     }
