@@ -11,7 +11,6 @@ import axios from 'axios';
 import Card from 'react-bootstrap/Card';
 import Accordion from 'react-bootstrap/Accordion';
 import Filter from '../../Components/Filter';
-import { Cloudinary } from "@cloudinary/url-gen";
 
 const Home = ( ) => {
     const products = useSelector(state => state.products)
