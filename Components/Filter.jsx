@@ -2,13 +2,14 @@ import Accordion from 'react-bootstrap/Accordion';
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-
+import { useDispatch } from 'react-redux';
+import { filterProductsByCategoryThunk } from '../src/store/slices/products';
 
 function Filter( {categories}) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => { setShow(true)}
-
+  const dispatch = useDispatch()
 
   return (
     <>
@@ -26,7 +27,7 @@ function Filter( {categories}) {
                         {
                         categories?.map( category => (
                             <Accordion.Body key={category.id } className='accordionBody'
-                            onClick={() => dispatch(filterProductsByCategoryThunk(category.id) )}   >
+                            onClick={() => dispatch(filterProductsByCategoryThunk(category?.id) )}   >
                             {category.name}
                             </Accordion.Body>
                                 ))

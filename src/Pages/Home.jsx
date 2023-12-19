@@ -11,6 +11,7 @@ import axios from 'axios';
 import Card from 'react-bootstrap/Card';
 import Accordion from 'react-bootstrap/Accordion';
 import Filter from '../../Components/Filter';
+import { Cloudinary } from "@cloudinary/url-gen";
 
 const Home = ( ) => {
     const products = useSelector(state => state.products)
@@ -19,7 +20,7 @@ const Home = ( ) => {
     const [ categories, setCategories ] = useState([])
     const [ searchValue, setSearchValue ] = useState("")
    
-
+console.log(products)
     useEffect(() =>{
         dispatch( getProductsThunk())
         getCategories()
@@ -40,7 +41,8 @@ const Home = ( ) => {
         }
         dispatch( addPurchaseThunk( data ))       
 } 
-       
+
+
     return(
         <main>
             <Row  className='home-row'>

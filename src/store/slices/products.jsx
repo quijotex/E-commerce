@@ -31,7 +31,7 @@ export const filterProductsByCategoryThunk =  id => dispatch => {
   dispatch(setIsLoading(true))
   axios
   .get(`https://app-ecommerce-0oc8.onrender.com/products?categoryId=${id}`)
-  .then(resp => dispatch(setProducts(resp.data)))
+  .then(resp => dispatch(setProducts(resp?.data)))
   .catch(error => console.error(error))
   .finally(() => dispatch(setIsLoading(false)))
 }
