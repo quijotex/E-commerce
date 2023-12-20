@@ -45,6 +45,10 @@ nav {
     height: 68px;
     border-left: 1px solid var(--light-gray); 
 }
+.navigation-nav__link img {
+    width: auto;
+    height: auto;
+}
 .navigation-nav__link .cart-color:hover {
     color: black
 }
