@@ -84,8 +84,8 @@ const Home = ( ) => {
                                     <Card className="card-product__detail" >
                                         <a className="card-product__anchor" href={`#/products/${product.id}`} > 
                                         <div className="card-product__images">
-                                        <Card.Img className="card-detail__img1" variant="top" src={product?.images[0]?.url} />
-                                        <Card.Img className="card-detail__img2" variant="top" src={product?.images[1]?.url} />
+                                        <Card.Img className="card-detail__img1" fetchpriority="high" variant="top" src={product?.images[0]?.url} />
+                                        <Card.Img className="card-detail__img2" fetchpriority="high" variant="top" src={product?.images[1]?.url} />
                                         </div>
                                         <Card.Body className="card-product__body">
                                             <Card.Title> <span className="card-body__gray card-body__gray--brand">{product?.brand}</span> </Card.Title>
