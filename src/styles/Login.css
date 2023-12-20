@@ -82,6 +82,9 @@
     --bs-btn-active-border-color: white;
     --bs-btn-disabled-bg: var(--primary);
 }
+.button-login.btn-primary {
+    --bs-btn-border-color: #ffffff;
+}
 .form-label {
     font-weight: 400;
 }

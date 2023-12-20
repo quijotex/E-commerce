@@ -31,9 +31,7 @@
     max-width: 100%;
 }
 /*Home*/
-.home-row {
-  width: 1024px;
-}
+
 .col-product-list {
   padding-right: 0px;
 }
@@ -55,16 +53,16 @@
 }
 /*Purchases*/
 .divContTitlePurchases {
-  padding: 0px 0px;
-}
-.divContTitlePurchases {
+  padding: 0px;
   margin-left: 40px;
 }
+
 .nav-purchases {
   margin-left: 70px;
 }
 
 }
+
 @media (max-width: 768px){
 
 .container, .container-md, .container-sm {
@@ -74,9 +72,6 @@
 
 /*Home*/
 
-.home-row {
-  max-width: 768px;
-}
 .searcher {
   margin-bottom: 10px;
   padding: 0px 25px;
@@ -90,6 +85,10 @@
 .accordion-col {
   display: none;
 }
+/*.col-product-list {
+  padding-right: 0px
+}
+
 /*AppNav*/
 
 .navigation {
@@ -119,11 +118,9 @@
 .liPurchases {
   width: 650px;
 }
-.divContTitlePurchases {
-  margin-left: 0px;
+
 }
-}
-@media (max-width: 425px) {
+@media (max-width: 550px) {
 
 .container, .container-sm {
     max-width: 425px;
@@ -131,6 +128,10 @@
 /*Home*/
 .home-row {
   max-width: 425px;
+}
+/*
+.col-product-list {
+  padding-right: 0px
 }
 /*AppNav*/
 .navigation-nav__link {
@@ -150,6 +151,7 @@
 .nav {
   margin-top: 75px;
   margin-left: 25px;
+  width: auto;
 }
 .carousel {
   padding: 0px 50px;
@@ -211,14 +213,26 @@
 .divPricePurchese  p {
   font-size: 0.8rem;
 }
+/*.divContTitlePurchases {
+  padding: 0px;
+}*/
 }
 @media (max-width: 375px) {
   .container, .container-sm {
     max-width: 375px;
 }
+/*AppNav*/
+
+.navigation__title {
+  padding: 3px;
+}
 /*Home*/
 .home-row {
   max-width: 375px;
+}
+/*
+.col-product-list {
+  padding-right: 0px 
 }
 
 /*Login*/
@@ -239,7 +253,11 @@
 }
 .divTitlePurchases  {
   width: 100px;
+  padding: 0px;
 }
+/*.divContTitlePurchases {
+  padding: 0px;
+}*/
 .quantity-purchases {
   width: 40px;
 }

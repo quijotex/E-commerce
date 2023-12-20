@@ -72,6 +72,9 @@
 .cart-product__buy  span::first-letter {
     text-transform: capitalize;
 }
+.cart-product__buy.btn-primary {
+    --bs-btn-border-color: #ffffff;
+}
 .cart-product--title {
     font-size: 1.5rem;
     letter-spacing: 0;
@@ -151,7 +154,6 @@
 .carousel-control-next, .carousel-control-prev {
     opacity: 1;
 }
-
 .carousel {
     text-align: center;
     width: 100%;
@@ -246,6 +248,9 @@
     --bs-btn-active-bg: var(--primary);
     --bs-btn-active-border-color: white;
     --bs-btn-disabled-bg: var(--primary);
+}
+.card-product__button button.btn-primary {
+    --bs-btn-border-color: #fdfdfd;
 }
 .card-product__price {
   line-height: 0.4;
