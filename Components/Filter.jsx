@@ -15,7 +15,7 @@ function Filter( {categories}) {
   return (
     <>
       <Button className='button-cart button-filter' onClick={handleShow}>
-      <img src={filter} alt='filter' />  <span className='name-filter'>Filter</span>
+      <img src={filter} alt='' />  <span className='name-filter'>Filter</span>
       </Button>
       <Offcanvas  className="filter-modal" show={show} onHide={handleClose} placement='end'>
       <Offcanvas.Header className='close-filter' closeButton>

@@ -11,8 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
-/assets/index-c249cd13.js
-/assets/index-86fa74c0.css
+
 
 
 # Editor directories and files

@@ -46,7 +46,7 @@ const Purchases = () => {
                         <li className="li-purchases" key={item?.id} >
                              <div className='liPurchases'>
                             <div className='conteImgPurchases'>
-                                 <img src={item?.product?.images[0]?.url} />
+                                 <img src={item?.product?.images[0]?.url} alt='' />
                             </div>
                            <div className='divTitlePurchases'>
                                  <h6>{item?.product?.title}</h6>
