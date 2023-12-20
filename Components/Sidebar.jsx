@@ -63,7 +63,7 @@ function Sidebar() {
             purchases?.map( product => (
                 <li className='render-cart__list' key={product?.id}>
                     <div className='cart-modal'>
-                     <img src={product?.product?.images[0]?.url} alt=''/>
+                     <img fetchpriority="high" src={product?.product?.images[0]?.url} alt=''/>
                         <div className='cart-modal__buttons'>
                             <p>{product?.product?.title}</p>
                             <div className='cart-modal__quantity'>
