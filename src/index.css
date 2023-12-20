@@ -6,12 +6,16 @@
 @import url(/src/styles/Sidebar.css);
 @import url(/src/styles/Filter.css);
 @import url(/src/styles/Purchases.css);
-
+@font-face {
+  font-family: 'Yantramanav-Regular';
+  src: local('Yantramanav-Regular'),
+        url('./fonts/Yantramanav-Regular.ttf') format('ttf')
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Yantramanav', sans-serif;
+  font-family: 'Yantramanav-Regular', sans-serif;
 }
 :root {
   --primary: #f85555;
