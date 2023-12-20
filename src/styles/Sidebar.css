@@ -58,8 +58,8 @@
    --bs-btn-disabled-bg: var(--primary);
 }
 .cart__quantity img {
-    width: auto;
-    height: auto;
+    width: 24px;
+    height: 24px;
 }
 .cart__amount {
     border: 1px solid var(--light-gray);
@@ -79,6 +79,7 @@
 }
 .modal-button__delete img {
     height: 20px;
+    width: 20px;
 }
 .total-cart {
     display: flex;

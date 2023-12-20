@@ -72,8 +72,14 @@
 .cart-product__buy  span::first-letter {
     text-transform: capitalize;
 }
+
 .cart-product__buy.btn-primary {
     --bs-btn-border-color: #ffffff;
+}
+.cart-product__buy img {
+    width: 24px;
+    height: 24px;
+
 }
 .cart-product--title {
     font-size: 1.5rem;

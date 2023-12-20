@@ -7,6 +7,8 @@
     background:#3c3c3b;
     padding: 60px 0px;   
     text-align: center; 
+    width: auto;
+    margin-top: 10px;
 }
 .footer h1 {
     text-transform: lowercase;
@@ -39,7 +41,9 @@
     text-decoration: none;
     width: 50px;
 }
-.footer__developers a i {
-    color: white;
+.footer__developers a img {
+    width: 24px;
+    height: 24px;
 }
+
  
