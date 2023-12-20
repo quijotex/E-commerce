@@ -11,6 +11,8 @@ import axios from 'axios';
 import Card from 'react-bootstrap/Card';
 import Accordion from 'react-bootstrap/Accordion';
 import Filter from '../../Components/Filter';
+import search from '../assets/search.svg';
+import whitecart from '../assets/whitecart.svg';
 
 const Home = ( ) => {
     const products = useSelector(state => state.products)
@@ -19,7 +21,6 @@ const Home = ( ) => {
     const [ categories, setCategories ] = useState([])
     const [ searchValue, setSearchValue ] = useState("")
    
-console.log(products)
     useEffect(() =>{
         dispatch( getProductsThunk())
         getCategories()
@@ -70,7 +71,7 @@ console.log(products)
                                 value={searchValue}
                                 onChange={e => setSearchValue(e.target.value)}
                                 />
-                            <Button  onClick={() => dispatch(filterProductsByNameThunk(searchValue) )} className='searcher-button'><i className='bx bx-search'></i></Button>
+                            <Button  onClick={() => dispatch(filterProductsByNameThunk(searchValue) )} className='searcher-button'><img src={search} alt='search'/></Button>
                             </InputGroup>
                             <div className='filter'>
                             <Filter categories={categories}/>
@@ -102,7 +103,7 @@ console.log(products)
                                         </Card.Body>
                                         </a>
                                         <div className="card-product__button" >
-                                        <Button onClick={() => addCartProduct(product?.id)} variant="primary"><i className='bx bx-cart'></i></Button>
+                                        <Button onClick={() => addCartProduct(product?.id)} variant="primary"><img src={whitecart} alt='cart'/></Button>
                                         </div>
                                      </Card>
                                 </Col>

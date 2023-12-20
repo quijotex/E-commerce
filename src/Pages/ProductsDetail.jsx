@@ -8,6 +8,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { Col, Row, Container }from "react-bootstrap";
 import Card from 'react-bootstrap/Card';
 import Carousel from 'react-bootstrap/Carousel';
+import minus from '../assets/minus.svg';
+import plus from '../assets/plus.svg';
+import whitecart from '../assets/whitecart.svg';
 
 const ProductsDetail = () => {
 
@@ -110,16 +113,16 @@ const ProductsDetail = () => {
                             <div className="price-quantity__quantity">
                                 <p>Quantity</p>
                                 <div className="price-quantity__buttons">
-                                    <button onClick={() => setQuantity(quantity - 1)} disabled={quantity === 1 }><i className='bx bx-minus'></i></button>
+                                    <button onClick={() => setQuantity(quantity - 1)} disabled={quantity === 1 }><img src={minus} alt='minus'/></button>
                                     <span className="quantity__amount">{quantity}</span>
-                                    <button onClick={() => setQuantity(quantity + 1)}><i className='bx bx-plus' ></i></button>
+                                    <button onClick={() => setQuantity(quantity + 1)}><img src={plus} alt='plus'/></button>
                                 </div>
 
                             </div>
 
                         </div>
 
-                        <Button onClick={addProduct}className="cart-product__buy"><span>Add to cart</span><i className='bx bx-cart bx-sm'></i></Button>
+                        <Button onClick={addProduct}className="cart-product__buy"><span>Add to cart</span><img src={whitecart} alt='cart'/></Button>
              </div>
 
 
@@ -137,15 +140,15 @@ const ProductsDetail = () => {
                             <div className="price-quantity__quantity">
                                 <p>Quantity</p>
                                 <div className="price-quantity__buttons">
-                                    <button onClick={() => setQuantity(quantity - 1)} disabled={quantity === 1 }><i className='bx bx-minus'></i></button>
+                                    <button onClick={() => setQuantity(quantity - 1)} disabled={quantity === 1 }><img src={minus} alt='minus'/></button>
                                     <span className="quantity__amount">{quantity}</span>
-                                    <button onClick={() => setQuantity(quantity + 1)}><i className='bx bx-plus' ></i></button>
+                                    <button onClick={() => setQuantity(quantity + 1)}><img src={plus} alt='plus'/></button>
                                 </div>
 
                             </div>
 
                         </div>
-                        <Button onClick={addProduct}className="cart-product__buy"><span>Add to cart</span><i className='bx bx-cart bx-sm'></i></Button>
+                        <Button onClick={addProduct}className="cart-product__buy"><span>Add to cart</span><img src={whitecart} alt='cart'/></Button>
 
                         <p className="cart-description">{productDetail?.description}</p>
                 </div>
@@ -178,7 +181,7 @@ const ProductsDetail = () => {
                                      </Card.Body>
                                  </a>
                                  <div className="card-product__button" >
-                                    <Button onClick={() => addCartProduct(product?.id)} variant="primary"><i className='bx bx-cart'></i></Button>
+                                    <Button onClick={() => addCartProduct(product?.id)} variant="primary"><img src={whitecart} alt='cart'/></Button>
                                  </div>
                              </Card>
                          </Col>

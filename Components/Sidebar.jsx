@@ -5,6 +5,10 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import { useSelector, useDispatch } from 'react-redux';
 import { getPurchasesThunk, updatePurchasesThunk, deletePurchasesThunk, purchaseCartThunk } from '../src/store/slices/purchases';
 import { useNavigate } from 'react-router-dom';
+import cart from '../src/assets/cart.svg';
+import minus from '../src/assets/minus.svg';
+import plus from '../src/assets/plus.svg';
+import trash from '../src/assets/trash.svg';
 
 function Sidebar() {
   const [show, setShow] = useState(false);
@@ -48,8 +52,8 @@ function Sidebar() {
 
   return (
     <>
-      <Button className='button-cart' onClick={handleShow}>
-      <i className='bx bx-cart bx-sm'></i>
+      <Button className='button-cart' onClick={handleShow} >
+      <img src={cart} alt='cart' />
       </Button>
       <Offcanvas  className="shopping-cart" show={show} onHide={handleClose} placement='end'>
        
@@ -63,14 +67,14 @@ function Sidebar() {
                         <div className='cart-modal__buttons'>
                             <p>{product?.product?.title}</p>
                             <div className='cart-modal__quantity'>
-                                <Button className='cart__quantity' onClick={() => decrementProduct(product)}><i className='bx bx-minus'></i></Button>
+                                <Button className='cart__quantity' onClick={() => decrementProduct(product)}><img src={minus} alt='minus'/></Button>
                                 <span className="cart__amount">
                                     {product?.quantity}
                                 </span>
-                                <Button className='cart__quantity' onClick={() => incrementProduct(product)}><i className='bx bx-plus' ></i></Button>
+                                <Button className='cart__quantity' onClick={() => incrementProduct(product)}><img src={plus} alt='plus'/></Button>
                             </div>
                         </div>
-                    <button onClick={() => deletePurchase(product?.id)} className='modal-button__delete'><i className='bx bx-trash' style={{color: "#eb0d0d"}} ></i></button>
+                    <button onClick={() => deletePurchase(product?.id)} className='modal-button__delete'><img src={trash} alt='trash'/></button>
                     </div>
                     <div className='total-cart'>
                         <p>Total:</p>

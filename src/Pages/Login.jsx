@@ -7,6 +7,8 @@ import { useNavigate, Link } from 'react-router-dom';
 import UserLogIn from '../assets/UserLogIn.svg'
 /*import getConfig from '../helpers/getConfig';
 import { useState } from 'react';*/
+import email from '../assets/email.svg';
+import lock from '../assets/lock.svg';
 
 const Login = () => {
 
@@ -58,8 +60,8 @@ const Login = () => {
             <div className='test-data'>
                 <b>Test data</b>
                 <div className='data-access'>
-                    <p><i className='bx bx-envelope'></i> john@gmail.com</p>
-                    <p><i className='bx bx-lock-alt' ></i>john1234</p>
+                    <p><img src={email} alt='email'/> john@gmail.com</p>
+                    <p><img src={lock} alt='lock' />john1234</p>
                 </div>
             </div>
                 <Form.Group className="mb-3" controlId="formBasicEmail">

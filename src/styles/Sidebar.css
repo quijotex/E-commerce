@@ -57,6 +57,10 @@
    --bs-btn-active-border-color: black;
    --bs-btn-disabled-bg: var(--primary);
 }
+.cart__quantity img {
+    width: auto;
+    height: auto;
+}
 .cart__amount {
     border: 1px solid var(--light-gray);
     width: 50px;
@@ -69,9 +73,12 @@
 .modal-button__delete {
     cursor: pointer;
     background-color: white;
-    height: 20px;
+    height: auto;
     display: flex;
     border: none;
+}
+.modal-button__delete img {
+    height: 20px;
 }
 .total-cart {
     display: flex;

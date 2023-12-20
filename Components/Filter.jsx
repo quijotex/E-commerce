@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { useDispatch } from 'react-redux';
 import { filterProductsByCategoryThunk } from '../src/store/slices/products';
+import filter from '../src/assets/filter.svg'
 
 function Filter( {categories}) {
   const [show, setShow] = useState(false);
@@ -14,7 +15,7 @@ function Filter( {categories}) {
   return (
     <>
       <Button className='button-cart button-filter' onClick={handleShow}>
-      <i className='bx bx-filter-alt bx-sm'></i>  <span className='name-filter'>Filter</span>
+      <img src={filter} alt='filter' />  <span className='name-filter'>Filter</span>
       </Button>
       <Offcanvas  className="filter-modal" show={show} onHide={handleClose} placement='end'>
       <Offcanvas.Header className='close-filter' closeButton>
