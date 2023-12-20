@@ -72,6 +72,10 @@
 .cart-product__buy  span::first-letter {
     text-transform: capitalize;
 }
+.cart-product__buy img {
+    width: auto;
+    height: auto;
+}
 .cart-product--title {
     font-size: 1.5rem;
     letter-spacing: 0;

@@ -16,6 +16,7 @@ const Purchases = () => {
             .then(resp => setPurchases(resp.data))
             .catch(error => console.error(error))
             .finally(() => dispatch(setIsLoading(false)))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     //Funcion cambio de formato de fecha
     const changeDate=(date)=>{

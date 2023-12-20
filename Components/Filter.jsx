@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Accordion from 'react-bootstrap/Accordion';
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
@@ -6,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import { filterProductsByCategoryThunk } from '../src/store/slices/products';
 import filter from '../src/assets/filter.svg'
 
+// eslint-disable-next-line react/prop-types
 function Filter( {categories}) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);

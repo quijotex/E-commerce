@@ -17,6 +17,10 @@
   box-sizing: border-box;
   font-family: 'Yantramanav-Regular', sans-serif;
 }
+html {
+  width: auto;
+  height: auto;
+}
 :root {
   --primary: #f85555;
   --light-gray: #dcd9d9;
