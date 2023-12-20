@@ -74,6 +74,9 @@
 }
 .cart-product__buy.btn-primary {
     --bs-btn-border-color: #ffffff;
+.cart-product__buy img {
+    width: auto;
+    height: auto;
 }
 .cart-product--title {
     font-size: 1.5rem;

@@ -39,7 +39,9 @@
     text-decoration: none;
     width: 50px;
 }
-.footer__developers a i {
-    color: white;
+.footer__developers a img {
+    width: auto;
+    height: auto;
 }
+
  
