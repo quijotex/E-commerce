@@ -70,6 +70,10 @@
     color: black;
     font-weight: 400; 
 }
+.button-cart img {
+        width: 24px;
+        height: 24px;
+}
 .modal-button__delete {
     cursor: pointer;
     background-color: white;
