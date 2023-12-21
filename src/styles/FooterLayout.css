@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
 }
-
 .footer {
     background:#3c3c3b;
     padding: 60px 0px;   
@@ -28,7 +27,6 @@
     display: flex;
     justify-content: center;
     gap: 150px;
-   
 }
 .footer__developers a {
     background: #50504f;

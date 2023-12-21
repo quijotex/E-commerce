@@ -5,12 +5,10 @@ import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
-
 const Signup = () => {
 
   const { register, handleSubmit } = useForm();
- const navigate = useNavigate()
-
+  const navigate = useNavigate()
   const submit = data => {
     axios
     .post( "https://app-ecommerce-0oc8.onrender.com/users/", data)
@@ -22,7 +20,6 @@ const Signup = () => {
     .catch(error => {console.error(error) })
 }
 
-
   return (
     <Form className="form-login__data signup_data" onSubmit={handleSubmit(submit)}>
     <h2 className='signup-title'>Sign Up</h2>
@@ -30,7 +27,6 @@ const Signup = () => {
             <Form.Label className='input-label'>Email</Form.Label>
             <Form.Control className="input-login" type="email" 
             { ...register("email")} />
-        
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicFirstName">
             <Form.Label className='input-label'>First Name</Form.Label>
@@ -52,7 +48,6 @@ const Signup = () => {
             <Form.Control  className="input-login" type="text"
              {...register("phone")} />
         </Form.Group>
-
         <Button className="button-login" variant="primary" type="submit">
             Create
         </Button>
@@ -61,5 +56,4 @@ const Signup = () => {
 </Form> 
   );
 };
-
 export default Signup;

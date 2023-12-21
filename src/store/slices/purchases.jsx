@@ -10,11 +10,9 @@ export const purchasesSlice = createSlice( {
         setPurchases: (state, action) => {
             return action.payload
         }
-
     }
 }
 )
-
 export const getPurchasesThunk = () => dispatch => {
     dispatch(setIsLoading(true))
     axios
@@ -23,7 +21,6 @@ export const getPurchasesThunk = () => dispatch => {
     .catch(error => console.error(error))
     .finally(() => dispatch(setIsLoading(false)))
 }
-
 export const addPurchaseThunk = data  => dispatch => {
     dispatch(setIsLoading(true))
         axios
@@ -32,11 +29,9 @@ export const addPurchaseThunk = data  => dispatch => {
         .catch(error => console.error(error))
         .finally(() => dispatch(setIsLoading(false)))
 }
-
 export const updatePurchasesThunk = (id, newQuantity) => dispatch => 
 {
     dispatch(setIsLoading(true))
-
     const body = {
         quantity : newQuantity
     }
@@ -46,7 +41,6 @@ export const updatePurchasesThunk = (id, newQuantity) => dispatch =>
     .catch(error => console.error(error))
     .finally(() => dispatch(setIsLoading(false)))
 }
-
 export const deletePurchasesThunk = (id) => dispatch =>
 {
     dispatch(setIsLoading(true))
@@ -56,17 +50,13 @@ export const deletePurchasesThunk = (id) => dispatch =>
     .catch(error => console.error(error))
     .finally(() => dispatch(setIsLoading(false)))
 }
-
 export const purchaseCartThunk = () => dispatch => {
     dispatch(setIsLoading(true))
-
     axios
         .post("https://app-ecommerce-0oc8.onrender.com/purchases", {}, getConfig())
         .then(() => dispatch(getPurchasesThunk()))
         .catch(error => console.error(error))
         .finally(() => dispatch(setIsLoading(false)))
 }
-
 export const { setPurchases } = purchasesSlice.actions;
-
 export default purchasesSlice.reducer; 

@@ -16,7 +16,6 @@ function App() {
 
   const isLoading = useSelector(state => state.isLoading)
   
-
   return (
     <HashRouter>
          <AppNav />
@@ -31,13 +30,10 @@ function App() {
                 <Route path="/purchases" element={<Purchases />} />
               </Route>
           </Route>
-          
         </Routes>
       </Container>
-
       {isLoading && <Loader />}
     </HashRouter>
   )
 }
-
 export default App

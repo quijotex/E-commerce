@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
@@ -11,12 +10,10 @@ import plus from '../src/assets/plus.svg';
 import trash from '../src/assets/trash.svg';
 
 function Sidebar() {
-  const [show, setShow] = useState(false);
 
+  const [show, setShow] = useState(false);
   const purchases = useSelector(state => state.purchases)
   const navigate = useNavigate()
- 
-
   const handleClose = () => setShow(false);
   const handleShow = () => {
     const token = localStorage.getItem("token")
@@ -25,17 +22,12 @@ function Sidebar() {
     } else {
         navigate('/')
     }
-    
 }
   const dispatch = useDispatch()
-  
-
   useEffect(() => {
     dispatch(getPurchasesThunk())
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-  
-
   const incrementProduct = updateProducts => {
     dispatch( updatePurchasesThunk( updateProducts?.id, updateProducts?.quantity + 1))
   }
@@ -44,9 +36,7 @@ function Sidebar() {
     dispatch( updatePurchasesThunk( updateProducts?.id, updateProducts?.quantity - 1 ))
     }
   }
-
   const amount =  purchases.map(purchase => purchase?.quantity * purchase?.product?.price)
-  
   const deletePurchase = (id) => {
     dispatch(deletePurchasesThunk(id))
   }
@@ -57,11 +47,9 @@ function Sidebar() {
       <img src={cart} alt='cart' />
       </Button>
       <Offcanvas  className="shopping-cart" show={show} onHide={handleClose} placement='end'>
-       
         <Offcanvas.Body className='render-cart'>
            <h4 className='shopping-cart__title'>Shopping cart</h4>
-          {
-            purchases?.map( product => (
+          {purchases?.map( product => (
                 <li className='render-cart__list' key={product?.id}>
                     <div className='cart-modal'>
                      <img src={product?.product?.images[0]?.url} alt=''/>
@@ -82,7 +70,6 @@ function Sidebar() {
                         <b>{product?.product?.price * product?.quantity}</b>
                     </div>
                 </li>
-             
                 ))
             }
             <div className='checkout'>
@@ -93,10 +80,8 @@ function Sidebar() {
             <button onClick={() => dispatch( purchaseCartThunk())}className='checkout-button'>Checkout</button>
              </div>
         </Offcanvas.Body>
-        
       </Offcanvas>
     </>
-  );
+  )
 }
-
 export default Sidebar;

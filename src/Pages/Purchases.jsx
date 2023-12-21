@@ -6,6 +6,7 @@ import  getConfig  from '../helpers/getConfig'
 import { Link } from 'react-router-dom';
 
 const Purchases = () => {
+
     const dispatch = useDispatch()
     const [ purchases, setPurchases ] = useState([])
 
@@ -27,6 +28,7 @@ const Purchases = () => {
 //retorna nuevo formato de fecha
     return  mounth + '/' + day + '/' + year;
     }
+
     return(
         <main>
             <div className='divContTitlePurchases'>
@@ -38,12 +40,9 @@ const Purchases = () => {
                 <p className="name-product">purchases</p>
                 </nav>
                 <div className='my-purchases'><b>My Purchases</b></div>
-           
             </div>
             <ul className='ulPurchases'>
-                {
-                    purchases?.map( item => (
-                   
+                {purchases?.map( item => (
                         <li className="li-purchases" key={item?.id} >
                              <div className='liPurchases'>
                             <div className='conteImgPurchases'>
@@ -61,7 +60,6 @@ const Purchases = () => {
                             </div>
                             </div>
                         </li>
-                    
                     ))
                 }
             </ul>

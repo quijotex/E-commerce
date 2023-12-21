@@ -38,15 +38,12 @@
     height: 45px;
     line-height: 1;
     width: 95px;
-
-   
     --bs-btn-hover-color: white;
     --bs-btn-hover-bg: var(--primary);
     --bs-btn-active-color: white;
     --bs-btn-active-bg: var(--primary);
     --bs-btn-active-border-color: white;
     --bs-btn-disabled-bg: var(--primary);
- 
 }
 .searcher-button img {
   width: 24px;
@@ -63,8 +60,7 @@
     padding: 50px 20px 20px;
     width: 300px;
 }
-.accordion {
-    
+.accordion { 
     --bs-accordion-border-color: white;
     --bs-accordion-btn-focus-border-color: white;
     --bs-accordion-btn-focus-box-shadow: white; 
@@ -96,7 +92,6 @@
  .accordionBody {
     font-weight: 400;
     line-height: 0;
-  
 }
 .li-products {
     padding: 30px;

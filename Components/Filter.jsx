@@ -6,9 +6,9 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import { useDispatch } from 'react-redux';
 import { filterProductsByCategoryThunk } from '../src/store/slices/products';
 import filter from '../src/assets/filter.svg'
-
 // eslint-disable-next-line react/prop-types
 function Filter( {categories}) {
+
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => { setShow(true)}
@@ -38,10 +38,8 @@ function Filter( {categories}) {
                     </Accordion.Item>
                 </Accordion>
         </Offcanvas.Body>
-        
       </Offcanvas>
     </>
   );
 }
-
 export default Filter;

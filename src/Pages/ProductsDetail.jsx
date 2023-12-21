@@ -18,17 +18,13 @@ const ProductsDetail = () => {
      const [ productDetail, setProductDetail ] = useState({}) 
      const [index, setIndex] = useState(0);
      const [ quantity, setQuantity ] = useState(1)
-
      const allproducts = useSelector(state => state.products)
-  
      const dispatch = useDispatch()
-    
-   
+
      useEffect(() => {
         getDetail()
      // eslint-disable-next-line react-hooks/exhaustive-deps
      }, [id])
-
      const getDetail = () => {
         axios
         .get( `https://app-ecommerce-0oc8.onrender.com/products/${id}`)
@@ -36,15 +32,12 @@ const ProductsDetail = () => {
          dispatch(filterProductsByCategoryThunk(resp?.data?.category?.id))})
         .catch(error => console.error(error))
      }
-
      const scrollToTop = () => {
         window.scrollTo({ top: 0, left: 0})
      }
-
      const handleSelect = (selectedIndex) => {
         setIndex(selectedIndex)
      }
-
      const addProduct = () => {
         const data = {
             quantity: quantity,
@@ -52,21 +45,17 @@ const ProductsDetail = () => {
         }
         dispatch( addPurchaseThunk( data))
      }
-
      const addCartProduct = ( item ) => {
         const data = {
             quantity: 1,
             productId: item
         }
-       
         dispatch( addPurchaseThunk( data ))
     }
      
-    
     return(
         <main>
             <Container className="container-detail">
-             
                 <nav className="nav">
                 <Link to="/" className="home-link">
                 <p>Home</p>
@@ -100,17 +89,13 @@ const ProductsDetail = () => {
                     <Col className="first-columns">
                     <div className="view-main">
                         <p className="cart-product--brand">{productDetail?.brand}</p>
-
                         <h2 className="cart-product cart-product--title">{productDetail?.title}</h2>
-
                         <p className="cart-description">{productDetail?.description}</p>
-
                         <div className="price-quantity">
                             <div className="price-quantity--price">
                                 <h3>Price</h3>
                                 <p className="cart-product cart-product--amount">$ {productDetail?.price}</p>
                             </div>
-
                             <div className="price-quantity__quantity">
                                 <p>Quantity</p>
                                 <div className="price-quantity__buttons">
@@ -118,22 +103,14 @@ const ProductsDetail = () => {
                                     <span className="quantity__amount">{quantity}</span>
                                     <button onClick={() => setQuantity(quantity + 1)}><img src={plus} alt='plus'/></button>
                                 </div>
-
                             </div>
-
                         </div>
-
                         <Button onClick={addProduct}className="cart-product__buy"><span>Add to cart</span><img src={whitecart} alt='cart'/></Button>
-             </div>
-
-
+                    </div>
                 <div className="view-responsive">
                 <p className="cart-product--brand">{productDetail?.brand}</p>
-
                         <h2 className="cart-product cart-product--title">{productDetail?.title}</h2>
-
                         <div className="price-quantity">
-
                             <div className="price-quantity--price">
                                 <h3>Price</h3>
                                 <p className="cart-product cart-product--amount">$ {productDetail?.price}</p>
@@ -145,12 +122,9 @@ const ProductsDetail = () => {
                                     <span className="quantity__amount">{quantity}</span>
                                     <button onClick={() => setQuantity(quantity + 1)}><img src={plus} alt='plus'/></button>
                                 </div>
-
                             </div>
-
                         </div>
                         <Button onClick={addProduct}className="cart-product__buy"><span>Add to cart</span><img src={whitecart} alt='cart'/></Button>
-
                         <p className="cart-description">{productDetail?.description}</p>
                 </div>
                     </Col>
@@ -159,7 +133,6 @@ const ProductsDetail = () => {
                     <strong className="related-title"> Discover similar items</strong>
                     {allproducts?.map(product => (
                         <Col lg={6} xl={4}className="card-product" key={product?.id}>
-                       
                             <Card className="card-product__detail" >
                                 <a className="card-product__anchor" href={`#/products/${product?.id}`} onClick={scrollToTop}> 
                                     <div className="card-product__images">
@@ -194,5 +167,4 @@ const ProductsDetail = () => {
         </main>
     )
 }
-
 export default ProductsDetail

@@ -9,8 +9,5 @@ const ProtectedRoutes = () => {
     } else {
         return <Navigate to="#/login"/>
     }
-
-
 }
-
 export default ProtectedRoutes

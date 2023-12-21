@@ -16,7 +16,6 @@
     width: 90px;
     height: 90px;
 }
-
 .form-login__data, .info-logout  {
     background: #fff;
     border-radius: 10px;
@@ -74,7 +73,6 @@
     margin: 10px 0 25px;
     padding: 9px;
     width: 100%;
-
     --bs-btn-hover-color: white;
     --bs-btn-hover-bg: var(--primary);
     --bs-btn-active-color: white;
