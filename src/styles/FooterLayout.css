@@ -8,7 +8,11 @@
     padding: 60px 0px;   
     text-align: center; 
     width: auto;
+<<<<<<< HEAD
     margin-top: 10px;
+=======
+    
+>>>>>>> c184252 (adding specific weight and height to svg)
 }
 .footer h1 {
     text-transform: lowercase;
@@ -42,8 +46,13 @@
     width: 50px;
 }
 .footer__developers a img {
+<<<<<<< HEAD
     width: 24px;
     height: 24px;
+=======
+    width: auto;
+    height: auto;
+>>>>>>> c184252 (adding specific weight and height to svg)
 }
 
  

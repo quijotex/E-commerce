@@ -56,6 +56,14 @@
   width: 24px;
   height: 24px;
 }
+.searcher-button img {
+  width: auto;
+  height: auto;
+}
+.card-product__button img {
+  width: auto;
+  height: auto;
+}
 .filter {
     display: none;
 }

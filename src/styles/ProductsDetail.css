@@ -72,6 +72,7 @@
 .cart-product__buy  span::first-letter {
     text-transform: capitalize;
 }
+<<<<<<< HEAD
 
 .cart-product__buy.btn-primary {
     --bs-btn-border-color: #ffffff;
@@ -80,6 +81,11 @@
     width: 24px;
     height: 24px;
 
+=======
+.cart-product__buy img {
+    width: auto;
+    height: auto;
+>>>>>>> c184252 (adding specific weight and height to svg)
 }
 .cart-product--title {
     font-size: 1.5rem;
