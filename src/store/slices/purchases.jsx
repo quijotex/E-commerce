@@ -28,7 +28,7 @@ export const addPurchaseThunk = data  => dispatch => {
         .then(() => dispatch(getPurchasesThunk()))
         .catch(error => console.error(error))
         .finally(() => dispatch(setIsLoading(false)))
-}
+   }
 export const updatePurchasesThunk = (id, newQuantity) => dispatch => 
 {
     dispatch(setIsLoading(true))

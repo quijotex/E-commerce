@@ -1,13 +1,12 @@
 .layout {
     display: flex;
     flex-direction: column;
+    height: 245px;
 }
 .footer {
     background:#3c3c3b;
     padding: 60px 0px;   
     text-align: center; 
-    height: 245px;
-    margin-top: 10px;
 }
 .footer h1 {
     text-transform: lowercase;
