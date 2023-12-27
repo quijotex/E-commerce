@@ -15,12 +15,12 @@ import search from '../assets/search.svg';
 import whitecart from '../assets/whitecart.svg';
 
 const Home = ( ) => {
-    const products = useSelector(state => state.products)
 
+    const products = useSelector(state => state.products)
     const dispatch = useDispatch()
     const [ categories, setCategories ] = useState([])
     const [ searchValue, setSearchValue ] = useState("")
-   
+
     useEffect(() =>{
         dispatch( getProductsThunk())
         getCategories()
@@ -28,21 +28,18 @@ const Home = ( ) => {
     }, [] )
 
     const getCategories = () => {
-
         axios
         .get("https://app-ecommerce-0oc8.onrender.com/categories")
         .then( resp => setCategories(resp?.data))
         .catch(error => console.error(error))
     }
-
     const addCartProduct = ( item ) => {
         const data = {
             quantity: 1,
             productId: item
         }
-        dispatch( addPurchaseThunk( data ))       
-} 
-
+        dispatch( addPurchaseThunk( data ))
+    } 
 
     return(
         <main>
@@ -51,8 +48,7 @@ const Home = ( ) => {
                 <Accordion  alwaysOpen  className='accordion'>
                 <Accordion.Item eventKey="1">
                     <Accordion.Header>Category</Accordion.Header> 
-                        {
-                        categories?.map( category => (
+                        {categories?.map( category => (
                             <Accordion.Body key={category.id } className='accordionBody'
                             onClick={() => dispatch(filterProductsByCategoryThunk(category?.id) )}   >
                             {category.name}
@@ -114,9 +110,7 @@ const Home = ( ) => {
                     </Row>
                  </Col>
             </Row>
-            
         </main>
     )
 }
-
 export default Home

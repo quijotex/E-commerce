@@ -15,7 +15,6 @@ const Login = () => {
         const { register, handleSubmit } = useForm()
         const navigate = useNavigate()
     /* const [ user, setUser ] = useState({}) */
-
         const submit = data => {
             axios
             .post( "https://app-ecommerce-0oc8.onrender.com/users/login", data)
@@ -29,14 +28,12 @@ const Login = () => {
             }
             })
         }
-
       /*  axios
         .get("https://app-ecommerce-0oc8.onrender.com/users/me", getConfig())
         .then(resp => setUser(resp?.data))
         .catch((error) => console.error(error)) */
 
         const token = localStorage.getItem("token")
-
         const deleteToken = () => {
             localStorage.removeItem("token")
         }
@@ -87,10 +84,9 @@ const Login = () => {
                     <p>Don`t have an account? </p>
                 <Link to='/signup'>Sign up</Link>
                 </div>
-    </Form> 
-}
+            </Form> 
+            }
         </main>
-    )
+        )
 }
-
 export default Login

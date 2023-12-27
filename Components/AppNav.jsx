@@ -34,5 +34,4 @@ function AppNav( ) {
     </Navbar>
   );
 }
-
 export default AppNav;

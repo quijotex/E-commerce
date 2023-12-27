@@ -3,7 +3,6 @@ nav {
 }
 .navigation.navbar.navbar-expand.navbar-light {
 max-width: none;
-
 }
 .navigation {
     border-bottom: 1px solid var(--light-gray);
@@ -20,7 +19,6 @@ max-width: none;
     font-weight: 800;
     text-transform: lowercase;
     padding: 10px 15px;
-  
     --bs-navbar-brand-hover-color: var(--primary);
     --bs-navbar-hover-color: var(--primary);
     --bs-navbar-disabled-color: var(--primary);
@@ -68,12 +66,10 @@ max-width: none;
     --bs-btn-hover-border-color: white;
     --bs-btn-active-bg: white;
     --bs-btn-active-border-color: white;
-
     --bs-btn-hover-color: black;
     --bs-btn-active-color: black;
     --bs-btn-disabled-color: black;
 }
-
 .button-cart.btn-primary {
 --bs-btn-border-color: #f9f9fa;
 }

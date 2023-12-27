@@ -1,14 +1,13 @@
 .layout {
     display: flex;
     flex-direction: column;
+    height: 245px;
 }
-
 .footer {
     background:#3c3c3b;
     padding: 60px 0px;   
     text-align: center; 
-    width: auto;
-    margin-top: 10px;
+    height: 240px;
 }
 .footer h1 {
     text-transform: lowercase;
@@ -28,7 +27,6 @@
     display: flex;
     justify-content: center;
     gap: 150px;
-   
 }
 .footer__developers a {
     background: #50504f;

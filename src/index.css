@@ -30,12 +30,10 @@ html {
 }
 
 @media (max-width: 1024px) {
-
 .container, .container-lg, .container-md, .container-sm {
     max-width: 100%;
 }
 /*Home*/
-
 .col-product-list {
   padding-right: 0px;
 }
@@ -60,22 +58,17 @@ html {
   padding: 0px;
   margin-left: 40px;
 }
-
 .nav-purchases {
   margin-left: 70px;
 }
-
 }
 
 @media (max-width: 768px){
-
 .container, .container-md, .container-sm {
     max-width: 768px;
     padding: 0px;
 }
-
 /*Home*/
-
 .searcher {
   margin-bottom: 10px;
   padding: 0px 25px;
@@ -92,9 +85,7 @@ html {
 /*.col-product-list {
   padding-right: 0px
 }
-
 /*AppNav*/
-
 .navigation {
   border-bottom: none;
   max-width: 768px;
@@ -107,22 +98,17 @@ html {
   height: 59px;
   border-left: none; 
 }
-
 /*Filter category*/
-
 .accordion-button {
   width: 250px;
 }
-
 /*Purchases*/
-
 .ulPurchases {
   padding-right: 32px;
 }
 .liPurchases {
   width: 650px;
 }
-
 }
 @media (max-width: 550px) {
 
@@ -180,9 +166,7 @@ html {
 .card-product {
   padding-left: 0px;
 }
-
 /*Purchases*/
-
 .ulPurchases {
   padding-right: 32px;
 }
@@ -221,12 +205,12 @@ html {
   padding: 0px;
 }*/
 }
+
 @media (max-width: 375px) {
   .container, .container-sm {
     max-width: 375px;
 }
 /*AppNav*/
-
 .navigation__title {
   padding: 3px;
 }
@@ -238,14 +222,11 @@ html {
 .col-product-list {
   padding-right: 0px 
 }
-
 /*Login*/
 .info-logout--adjust, .form-login__data {
   width: 340px;
 }
- 
 /* Purchases*/
-
 .liPurchases {
   margin: 0px;
 }
