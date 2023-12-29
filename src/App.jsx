@@ -32,7 +32,7 @@ function App() {
           </Route>
         </Routes>
       </Container>
-      {isLoading && <Loader />}
+      {isLoading && <Loader/>}
     </HashRouter>
   )
 }
