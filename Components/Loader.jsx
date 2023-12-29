@@ -4,24 +4,28 @@ const Loader = () => {
 
     const phrases = [
         {
+            id: 10,
+            text: ""
+        },
+        {
             id: 1,
-            text: "If a site takes > 1 second to become interactive, users lose attention, and their perception of completing the page task is broken [Source: Lighthouse, which took from Google Developers Blog]"
+            text: "If a site takes > 1 second to become interactive, users lose attention, and their perception of completing the page task is broken [Source: Lighthouse, taken from Google Developers Blog]"
         },
         {
             id: 2,
-            text: "We know it, but the database and the web service were deployed by using different providers. You know, free services."
+            text: "In May 2023, mobile devices generated 65.49% of global website traffic [Hubspot Blog, taken from takenSimilarWeb, 2023)"
         },
         {
             id: 3,
-            text: "As page load time increases from one second to seven seconds, the probability of a mobile site visitor bouncing increases 113% [Source: Lighthouse, which took from Think with Google]"
+            text: "As page load time increases from one second to seven seconds, the probability of a mobile site visitor bouncing increases 113% [Source: Lighthouse, taken from Think with Google]"
         },
         {
             id: 4,
-            text: "We already tested by deploying on the same provider, but lifetime service was too short. That makes sense, isn't it?"
+            text: "73.1% of web designers believe that a non-responsive design is the top reason why visitors leave a website [Hubspot Blog, taken from GoodFirms, 2021]"
         },
         {
             id: 5,
-            text: "Walmart saw a 1% increase in revenue for every 100ms improvement in page load [Source: Lighthouse, which took from WPO Stats]"
+            text: "Walmart saw a 1% increase in revenue for every 100ms improvement in page load [Source: Lighthouse, taken from WPO Stats]"
         },
         {
             id: 6,
