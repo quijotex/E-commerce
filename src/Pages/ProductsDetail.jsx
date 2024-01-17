@@ -27,7 +27,7 @@ const ProductsDetail = () => {
      }, [id])
      const getDetail = () => {
         axios
-        .get( `https://app-ecommerce-0oc8.onrender.com/products/${id}`)
+        .get( `https://e-commerce-api-v2.academlo.tech/api/v1/products/${id}`)
         .then(resp => { setProductDetail(resp?.data);
          dispatch(filterProductsByCategoryThunk(resp?.data?.category?.id))})
         .catch(error => console.error(error))

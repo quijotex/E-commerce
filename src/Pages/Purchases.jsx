@@ -8,17 +8,24 @@ import { Link } from 'react-router-dom';
 const Purchases = () => {
 
     const dispatch = useDispatch()
-    const [ purchases, setPurchases ] = useState([])
-
+    const [ items, setItems ] = useState([])
+    
+ 
     useEffect(() => {
+      
+        const token = localStorage.getItem("token")
+        
+        if(token){
         dispatch(setIsLoading(true))
         axios
-            .get("https://app-ecommerce-0oc8.onrender.com/purchases", getConfig())
-            .then(resp => setPurchases(resp.data))
+            .get("https://e-commerce-api-v2.academlo.tech/api/v1/purchases", getConfig())
+            .then(resp => setItems(resp.data))
             .catch(error => console.error(error))
             .finally(() => dispatch(setIsLoading(false)))
     // eslint-disable-next-line react-hooks/exhaustive-deps
+        } return
     }, [])
+
     //Funcion cambio de formato de fecha
     const changeDate=(date)=>{
         let  changed= new Date(date)
@@ -42,7 +49,7 @@ const Purchases = () => {
                 <div className='my-purchases'><b>My Purchases</b></div>
             </div>
             <ul className='ulPurchases'>
-                {purchases?.map( item => (
+                {items?.map( item => (
                         <li className="li-purchases" key={item?.id} >
                              <div className='liPurchases'>
                             <div className='conteImgPurchases'>

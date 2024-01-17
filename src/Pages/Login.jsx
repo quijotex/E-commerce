@@ -17,7 +17,7 @@ const Login = () => {
     /* const [ user, setUser ] = useState({}) */
         const submit = data => {
             axios
-            .post( "https://app-ecommerce-0oc8.onrender.com/users/login", data)
+            .post( "https://e-commerce-api-v2.academlo.tech/api/v1/users/login", data)
             .then( resp => {
                 localStorage.setItem("token", resp?.data?.token)
                 navigate("/");

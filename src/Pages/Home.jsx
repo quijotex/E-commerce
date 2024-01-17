@@ -27,19 +27,25 @@ const Home = ( ) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [] )
 
+
     const getCategories = () => {
         axios
-        .get("https://app-ecommerce-0oc8.onrender.com/categories")
+        .get("https://e-commerce-api-v2.academlo.tech/api/v1/categories")
         .then( resp => setCategories(resp?.data))
         .catch(error => console.error(error))
     }
-    const addCartProduct = ( item ) => {
-        const data = {
-            quantity: 1,
-            productId: item
-        }
-        dispatch( addPurchaseThunk( data ))
-    } 
+    
+       
+        const addCartProduct = ( item ) => {
+            const data = {
+                quantity: 1,
+                productId: item
+            }
+            dispatch( addPurchaseThunk( data ))
+        } 
+
+
+   
 
     return(
         <main>

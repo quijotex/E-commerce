@@ -14,21 +14,31 @@ export const purchasesSlice = createSlice( {
 }
 )
 export const getPurchasesThunk = () => dispatch => {
+    
+  const token = localStorage.getItem("token")
+
+  if(token) {
     dispatch(setIsLoading(true))
     axios
-    .get("https://app-ecommerce-0oc8.onrender.com/cart", getConfig())
+    .get("https://e-commerce-api-v2.academlo.tech/api/v1/cart", getConfig())
     .then(resp => dispatch( setPurchases(resp?.data)))
     .catch(error => console.error(error))
     .finally(() => dispatch(setIsLoading(false)))
+  } return
 }
 export const addPurchaseThunk = data  => dispatch => {
+
+    const token = localStorage.getItem("token")
+    if(token) {
+        dispatch(setIsLoading(true))
     dispatch(setIsLoading(true))
         axios
-        .post('https://app-ecommerce-0oc8.onrender.com/cart/', data,    getConfig())
+        .post('https://e-commerce-api-v2.academlo.tech/api/v1/cart/', data, getConfig())
         .then(() => dispatch(getPurchasesThunk()))
         .catch(error => console.error(error))
         .finally(() => dispatch(setIsLoading(false)))
-   }
+   } return
+}
 export const updatePurchasesThunk = (id, newQuantity) => dispatch => 
 {
     dispatch(setIsLoading(true))
@@ -36,7 +46,7 @@ export const updatePurchasesThunk = (id, newQuantity) => dispatch =>
         quantity : newQuantity
     }
     axios
-    .put(`https://app-ecommerce-0oc8.onrender.com/cart/${id}`, body, getConfig())
+    .put(`https://e-commerce-api-v2.academlo.tech/api/v1/cart/${id}`, body, getConfig())
     .then(() => dispatch(getPurchasesThunk() ))
     .catch(error => console.error(error))
     .finally(() => dispatch(setIsLoading(false)))
@@ -45,7 +55,7 @@ export const deletePurchasesThunk = (id) => dispatch =>
 {
     dispatch(setIsLoading(true))
     axios
-    .delete(`https://app-ecommerce-0oc8.onrender.com/cart/${id}`, getConfig())
+    .delete(`https://e-commerce-api-v2.academlo.tech/api/v1/cart/${id}`, getConfig())
     .then(() => dispatch(getPurchasesThunk() ))
     .catch(error => console.error(error))
     .finally(() => dispatch(setIsLoading(false)))
@@ -53,7 +63,7 @@ export const deletePurchasesThunk = (id) => dispatch =>
 export const purchaseCartThunk = () => dispatch => {
     dispatch(setIsLoading(true))
     axios
-        .post("https://app-ecommerce-0oc8.onrender.com/purchases", {}, getConfig())
+        .post("https://e-commerce-api-v2.academlo.tech/api/v1/purchases", {}, getConfig())
         .then(() => dispatch(getPurchasesThunk()))
         .catch(error => console.error(error))
         .finally(() => dispatch(setIsLoading(false)))

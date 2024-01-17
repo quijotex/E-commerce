@@ -11,7 +11,7 @@ const Signup = () => {
   const navigate = useNavigate()
   const submit = data => {
     axios
-    .post( "https://app-ecommerce-0oc8.onrender.com/users/", data)
+    .post( "https://e-commerce-api-v2.academlo.tech/api/v1/users/", data)
     .then( resp => {
         resp?.data
         alert('User was created succesfully. Now, you can log in!')
